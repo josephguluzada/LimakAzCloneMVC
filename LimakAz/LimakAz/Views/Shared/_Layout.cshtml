@@ -24,7 +24,7 @@
                     <ul class="nav-list col-md-4">
                         <li class="nav-list-item"><a href="tariffs.html">Tariflər</a></li>
                         <li class="nav-list-item"><a href="calculator.html">Kalkulyator</a></li>
-                        <li class="nav-list-item"><a href="shop.html">Mağazalar</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
                         <li class="nav-list-item"><a href="contact.html">Əlaqə</a></li>
                         <li class="nav-list-item"><a href="question.html">FAQ</a></li>
                     </ul>
@@ -79,8 +79,10 @@
     </header>
     <!-- Header End -->
     <!-- Main Start -->
-    <main>
-        @RenderBody()
+    <main id="main"
+          style="background: url(./assets/images/limak_bg.jpg) no-repeat; background-size: 100%; background-position: top center;"
+          class="bg-full">
+@RenderBody()
     </main>
     <!-- Main End -->
     <!-- Footer Start -->
@@ -104,7 +106,7 @@
                     <ul class="footer-nav-list">
                         <li><a href="tariffs.html">Tariflər</a></li>
                         <li><a href="calculator.html">Kalkulyator</a></li>
-                        <li><a href="shop.html">Mağazalar</a></li>
+                        <li><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
                     </ul>
                     <ul class="footer-nav-list">
                         <li><a href="terms.html">Qaydalar</a></li>
@@ -142,9 +144,21 @@
         </div>
     </footer>
     <!-- Footer End -->
-    <script src="~/assets/js/index.js"></script>
-    <script src="~/assets/js/main.js"></script>
-
+    <!-- Banner Start -->
+    <div class="banner">
+        <a asp-action="index" asp-controller="home" class="left-banner">
+            <div style="position: relative;">
+                <img src="~/assets/images/left-banner.png" alt="">
+            </div>
+        </a>
+        <a asp-action="index" asp-controller="home" class="right-banner">
+            <div style="position: relative;">
+                <img src="~/assets/images/right-banner.png" alt="">
+            </div>
+        </a>
+    </div>
+    <!-- Banner End -->
+    <script src="~/assets/js/store.js"></script>
 </body>
 
 </html>

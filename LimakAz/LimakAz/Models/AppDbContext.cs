@@ -17,5 +17,6 @@ namespace LimakAz.Models
         public DbSet<Certificate> Certificates { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<ShopItem> ShopItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
