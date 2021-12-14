@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LimakAz.Models;
+using LimakAz.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,21 @@ namespace LimakAz.Controllers
 {
     public class ContactController : Controller
     {
+        private readonly AppDbContext _context;
+
+        public ContactController(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            ContactViewModel contactVM = new ContactViewModel
+            {
+                Contacts = _context.Contacts.ToList()
+            };
+
+            return View(contactVM);
         }
     }
 }
