@@ -1,0 +1,91 @@
+﻿@model TariffViewModel
+        <div class="main-container">
+            <!-- Currency -->
+            <div class="block">
+                <div class="block-header">
+                    <h2 class="block-title">ÖLKƏLƏR ÜZRƏ TARİFLƏR</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a asp-action="index" asp-controller="home">Ana səhifə</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <span>Tariflər</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="block-body">
+                    <div class="currency-div">
+                        <div class="currency-wrapper">
+                            <div class="currency-inner">
+                                <div class="left-side">
+                                    <div class="card tariff-card">
+                                        <div class="tariff-card-header">
+                                            <img src="~/assets/images/tr-circle.svg" alt="">
+                                            <h3>Türkiyə</h3>
+                                        </div>
+                                        <div class="tabs">
+                                            <ul class="nav nav-tabs">
+                                                @foreach (var contact in Model.Contacts)
+                                                {
+                                                    <li class="nav-item">
+                                                        <a href="#" class="nav-link">
+                                                            @contact.CityName
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                            <div class="tab-content">
+                                                <ul>
+                                                    @foreach (var tariff in Model.Tariffs.Where(x=>x.IsLocal))
+                                                    {
+                                                        <li>
+                                                            <div class="weight"><strong>@tariff.Weight</strong></div>
+                                                            <div class="price"><strong>@tariff.Price</strong> $</div>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="left-side">
+                                    <div class="card tariff-card">
+                                        <div class="tariff-card-header">
+                                            <img src="~/assets/images/usa-circle.svg" alt="">
+                                            <h3>ABŞ</h3>
+                                        </div>
+                                        <div class="tabs">
+                                            <ul class="nav nav-tabs">
+                                                @foreach (var contact1 in Model.Contacts)
+                                                {
+                                                    <li class="nav-item">
+                                                        <a href="#" class="nav-link">
+                                                            @contact1.CityName
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                            <div class="tab-content">
+                                                <ul>
+                                                    @foreach (var tariff in Model.Tariffs.Where(x => !x.IsLocal))
+                                                    {
+                                                        <li>
+                                                            <div class="weight"><strong>@tariff.Weight</strong></div>
+                                                            <div class="price"><strong>@tariff.Price</strong> $</div>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="~/assets/js/tariff.js"></script>
+
+

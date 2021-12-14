@@ -19,5 +19,6 @@ namespace LimakAz.Models
         public DbSet<ShopItem> ShopItems { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Tariff> Tariffs { get; set; }
     }
 }

@@ -148,3 +148,4 @@ C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netco
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Category.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Tariff\Index.cshtml.g.cs
