@@ -8,7 +8,6 @@ C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\bin\Debug\netco
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\bin\Debug\netcoreapp3.1\LimakAz.pdb
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\bin\Debug\netcoreapp3.1\LimakAz.Views.dll
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\bin\Debug\netcoreapp3.1\LimakAz.Views.pdb
-C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\LimakAz.csproj.AssemblyReference.cache
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\LimakAz.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\LimakAz.AssemblyInfoInputs.cache
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\LimakAz.AssemblyInfo.cs
@@ -149,3 +148,5 @@ C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netco
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Category.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Tariff\Index.cshtml.g.cs
+C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
+C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\LimakAz.csproj.AssemblyReference.cache

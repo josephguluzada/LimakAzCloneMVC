@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="https://limak.az/favicon.ico">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <title>Limak.az</title>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="fixed-top">
+        <nav class="navbar">
+            <div class="container-nav">
+                <div class="navbar-wrapper row">
+                    <div class="navbar-logo col-md-2">
+                        <a asp-action="index" asp-controller="home" class="logo">
+                            <img src="~/assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <ul class="nav-list col-md-4">
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="tariff">Tariflər</a></li>
+                        <li class="nav-list-item"><a href="calculator.html">Kalkulyator</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="contact">Əlaqə</a></li>
+                        <li class="nav-list-item"><a href="question.html">FAQ</a></li>
+                    </ul>
+                    <div class="navbar-right-col col-md-6">
+                        <a href="#" class="navbar-contact-phone">
+                            <img src="~/assets/images/hot_line.svg" alt="">
+                        </a>
+                        <!-- Login time active -->
+                        <!-- <div class="user-panel-account">
+            <div class="container-user-panel">
+                <div class="dropdown b-dropdown lang btn-group">
+                    <button type="button" class="btn dropdown-toggle btn-primary user-panel-btn">
+                        <span style="font-weight: 600;" id="userPanelBtn">Yusif Guluzada</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" id="userPanelList">
+                        <li class="lang-dropdown"><a href="user-panel.html"
+                                class="dropdown-item"><span>İstifadəçi
+                                    paneli</span></a>
+                        </li>
+                        <li class="lang-dropdown"><a href="#"
+                                class="dropdown-item"><span>Sifarişlər</span></a>
+                        </li>
+                        <li class="lang-dropdown"><a href="report.html"
+                                class="dropdown-item"><span>Bəyan
+                                    Gözləyən</span></a>
+                        </li>
+                        <li class="lang-dropdown"><a href="package.html"
+                                class="dropdown-item"><span>Bağlamalar</span></a>
+                        </li>
+                        <li class="lang-dropdown"><a href="adress.html"
+                                class="dropdown-item"><span>Xaricdəki
+                                    Ünvanlar</span></a>
+                        </li>
+                        <li class="lang-dropdown"><a href="courier.html"
+                                class="dropdown-item"><span>Kuryer</span></a>
+                        </li>
+                        <li class="lang-dropdown"><a href="up-setting.html"
+                                class="dropdown-item"><span>Tənzimləmələr</span></a>
+                        </li>
+                        <li class="lang-dropdown"><a href="#" class="dropdown-item"><span>Hesabdan
+                                    çıx</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+                        <a href="login.html" class="button">Daxil ol</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <main>
+        @RenderBody()
+    </main>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <footer style="margin-top: 0;">
+        <div class="container-footer">
+            <div class="footer-main row">
+                <div class="footer-left col-md-4">
+                    <a asp-action="index" asp-controller="home" class="footer-logo">
+                        <img src="~/assets/images/logo-white.svg" alt="">
+                    </a>
+                    <div class="footer-app">
+                        <a href="#">
+                            <img src="~/assets/images/app-store.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="~/assets/images/google-play.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-navigation-menu col-md-4">
+                    <ul class="footer-nav-list">
+                        <li><a asp-action="index" asp-controller="tariff">Tariflər</a></li>
+                        <li><a href="calculator.html">Kalkulyator</a></li>
+                        <li><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
+                    </ul>
+                    <ul class="footer-nav-list">
+                        <li><a href="terms.html">Qaydalar</a></li>
+                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="question.html">FAQ</a></li>
+                    </ul>
+                    <ul class="footer-nav-list">
+                        <li><a href="privacy.html">Gizlilik şərtləri</a></li>
+                        <li><a asp-action="index" asp-controller="contact">Əlaqə</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact col-md-4">
+                    <a href="#" class="hot-line">
+                        <img src="~/assets/images/hot-line.svg" alt="">
+                    </a>
+                    <div class="footer-social">
+                        <a href="#"><img src="~/assets/images/facebook.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/instagram.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/telegram.png" alt="" class="resized-icon"></a>
+                        <a href="#"><img src="~/assets/images/twitter.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/youtube.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/tik-tok.png" alt="" class="resized-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    © 2018 - 2021 Limak.az | Bütün hüquqlar qorunur
+                </div>
+                <div class="footer-payment">
+                    <img src="~/assets/images/visa.svg" alt="">
+                    <img src="~/assets/images/mastercard.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <script src="~/assets/js/index.js"></script>
+    <script src="~/assets/js/main.js"></script>
+
+</body>
+
+</html>
