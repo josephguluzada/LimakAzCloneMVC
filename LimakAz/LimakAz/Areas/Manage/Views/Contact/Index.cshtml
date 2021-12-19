@@ -1,0 +1,42 @@
+﻿@model List<Contact>
+@{ int order = 0; }
+
+<div class="content-wrapper pb-0">
+    <div class="py-2">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Contact:</h1>
+            <a asp-action="create" asp-controller="contact" asp-area="manage" class="btn btn-primary">Create</a>
+        </div>
+        <table id="example" class="table  table-hover table-bordered " cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>CityName</th>
+                    <th>Address</th>
+                    <th>WeekDays</th>
+                    <th>Hours</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Contact contact in Model)
+                {
+                    order++;
+
+                <tr>
+                    <td>@order</td>
+                    <td>@contact.CityName</td>
+                    <td>@contact.Address</td>
+                    <td>@contact.WeekDays</td>
+                    <td>@contact.Hours</td>
+                    <td>
+                        <a asp-action="edit" asp-route-id="@contact.Id" class="btn btn-success">Edit</a>
+                        <a asp-action="deletefetch" asp-route-id="@contact.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+                    </td>
+                </tr>}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

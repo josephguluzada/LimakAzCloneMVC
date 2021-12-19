@@ -1,0 +1,48 @@
+﻿@model Contact
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="mb-3 border-bottom pb-4">
+                <h1>Edit page:</h1>
+            </div>
+            <form method="post" enctype="multipart/form-data" class="pt-3">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="CityName">CityName</label>
+                        <input asp-for="CityName" class="form-control" placeholder="CityName">
+                        <span class="text-danger" asp-validation-for="CityName"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="Address">Address</label>
+                        <input asp-for="Address" class="form-control" placeholder="Address">
+                        <span class="text-danger" asp-validation-for="Address"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="WeekDays">WeekDays</label>
+                        <input asp-for="WeekDays" class="form-control" placeholder="WeekDays">
+                        <span class="text-danger" asp-validation-for="WeekDays"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="InfoMail">InfoMail</label>
+                        <input asp-for="InfoMail" class="form-control" placeholder="InfoMail">
+                        <span class="text-danger" asp-validation-for="InfoMail"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="Hours">Hours</label>
+                        <input asp-for="Hours" class="form-control" placeholder="Hours">
+                        <span class="text-danger" asp-validation-for="Hours"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

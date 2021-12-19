@@ -1,0 +1,36 @@
+﻿@model Tariff
+
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="mb-3 border-bottom pb-4">
+                <h1>Create a new item:</h1>
+            </div>
+            <form method="post" enctype="multipart/form-data" class="pt-3">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label asp-for="Weight">Weight</label>
+                        <input asp-for="Weight" class="form-control" placeholder="Weight">
+                        <span class="text-danger" asp-validation-for="Weight"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="Price">Price</label>
+                        <input asp-for="Price" class="form-control" placeholder="Price">
+                        <span class="text-danger" asp-validation-for="Price"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="IsLocal" class="form-check-label"></label>
+                        <input asp-for="IsLocal" type="checkbox" class="form-check-input" style="margin-top:2rem;">
+                        <span class="text-danger" asp-validation-for="IsLocal"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
