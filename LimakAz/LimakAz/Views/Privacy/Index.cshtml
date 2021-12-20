@@ -1,0 +1,36 @@
+﻿@model List<Privacy>
+        <div class="main-container">
+            <!-- Privacy Start -->
+            <section class="privacy">
+                <div class="block">
+                    <div class="block-header">
+                        <h2 class="block-title">Gizlilik şərtləri</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Ana səhifə</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <span>Gizlilik şərtləri</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block-body">
+                        @foreach (Privacy privacy in Model)
+                        {
+                            <div class="card card-privacy">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <h5>@privacy.Title</h5>
+                                        <br>
+                                        @Html.Raw(privacy.Desc)
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </section>
+            <!-- Privacy End -->
+        </div>
+   
