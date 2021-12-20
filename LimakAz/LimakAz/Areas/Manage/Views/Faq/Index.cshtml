@@ -24,7 +24,7 @@
     <tr>
         <td>@order</td>
         <td>@faq.Title</td>
-        <td>@(faq.Desc.Length > 100 ? faq.Desc.Substring(0,100) : faq.Desc)</td>
+        <td>@(faq.Desc.Length > 100 ? faq.Desc.Substring(0,60) : faq.Desc)</td>
         <td>
             <a asp-action="edit" asp-route-id="@faq.Id" class="btn btn-success">Edit</a>
             <a asp-action="deletefetch" asp-route-id="@faq.Id" class="btn btn-danger btn-sweet-delete">Delete</a>

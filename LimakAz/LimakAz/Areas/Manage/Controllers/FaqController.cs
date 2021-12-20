@@ -42,5 +42,42 @@ namespace LimakAz.Areas.Manage.Controllers
 
             return RedirectToAction("index","faq");
         }
+
+        public IActionResult Edit(int id)
+        {
+            Faq faq = _context.Faqs.FirstOrDefault(x => x.Id == id);
+            if (faq == null) return NotFound();
+
+            return View(faq);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Faq faq)
+        {
+            Faq existFaq = _context.Faqs.FirstOrDefault(x => x.Id == faq.Id);
+
+            if (faq == null) return NotFound();
+            if (!ModelState.IsValid) return View();
+
+            existFaq.Title = faq.Title;
+            existFaq.Desc = faq.Desc;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "faq");
+        }
+
+        public IActionResult DeleteFetch(int id)
+        {
+            Faq faq = _context.Faqs.FirstOrDefault(x => x.Id == id);
+            if (faq == null) return Json(new { status = 404 });
+
+            _context.Faqs.Remove(faq);
+            _context.SaveChanges();
+
+            return Json(new { status = 200 });
+        }
     }
 }
