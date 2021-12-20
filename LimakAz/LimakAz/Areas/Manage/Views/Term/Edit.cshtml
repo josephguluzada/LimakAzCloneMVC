@@ -29,5 +29,16 @@
     </div>
 </div>
 
+@section CkEditor{
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+    <script src="~/manage/ckeditor5-build-classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.getElementById("desc"))
+            .catch(err => {
+                console.log(err)
+            })
+    </script>
+}
 
 
