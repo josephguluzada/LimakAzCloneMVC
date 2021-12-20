@@ -22,5 +22,6 @@ namespace LimakAz.Models
         public DbSet<Tariff> Tariffs { get; set; }
         public DbSet<Term> Terms { get; set; }
         public DbSet<Faq> Faqs { get; set; }
+        public DbSet<Privacy> Privacies { get; set; }
     }
 }
