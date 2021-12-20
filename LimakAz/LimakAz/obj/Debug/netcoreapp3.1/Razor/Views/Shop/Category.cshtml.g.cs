@@ -21,13 +21,20 @@ using LimakAz;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\Views\_ViewImports.cshtml"
+using LimakAz.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\Views\_ViewImports.cshtml"
 using LimakAz.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ddb97359f093cc3bd9860ccf4e080b82a441212f", @"/Views/Shop/Category.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e30b6e0997f98c918a47e88d6f40e38b69a58826", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dd6f2a77d9e2a36d17a1c2a347a193f5f1f0bc81", @"/Views/_ViewImports.cshtml")]
     public class Views_Shop_Category : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ShopViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -87,7 +94,7 @@ using LimakAz.ViewModels;
                 <ul class=""breadcrumb"">
                     <li class=""breadcrumb-item"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddb97359f093cc3bd9860ccf4e080b82a441212f8558", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddb97359f093cc3bd9860ccf4e080b82a441212f8752", async() => {
                 WriteLiteral("Ana səhifə");
             }
             );
@@ -118,7 +125,7 @@ using LimakAz.ViewModels;
                             <ul class=""nav flex-column"">
                                 <li class=""nav-item"" data-target-item=""all"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddb97359f093cc3bd9860ccf4e080b82a441212f10507", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddb97359f093cc3bd9860ccf4e080b82a441212f10701", async() => {
                 WriteLiteral(@"
                                         <span class=""nav-icon"">
                                             <svg width=""18"" height=""19"" viewBox=""0 0 18 19"" fill=""none""
@@ -166,7 +173,7 @@ using LimakAz.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddb97359f093cc3bd9860ccf4e080b82a441212f14707", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddb97359f093cc3bd9860ccf4e080b82a441212f14901", async() => {
                 WriteLiteral("\r\n                                            <span class=\"nav-icon\">\r\n                                                ");
 #nullable restore
 #line 45 "C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\Views\Shop\Category.cshtml"
@@ -233,7 +240,7 @@ using LimakAz.ViewModels;
                                 <li class=""nav-item"">
                                     <a data-target=""1"" href=""#"" class=""nav-link active"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ddb97359f093cc3bd9860ccf4e080b82a441212f18875", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ddb97359f093cc3bd9860ccf4e080b82a441212f19069", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -257,7 +264,7 @@ using LimakAz.ViewModels;
                                 <li class=""nav-item card-tabs"">
                                     <a data-target=""2"" href=""#"" class=""nav-link"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ddb97359f093cc3bd9860ccf4e080b82a441212f20529", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ddb97359f093cc3bd9860ccf4e080b82a441212f20723", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -309,7 +316,7 @@ WriteAttributeValue(" ", 5620, shopItem.RedirectUrl, 5621, 21, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral("\r\n                                               target=\"_blank\" class=\"store-item\">\r\n                                                <article class=\"card\">\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ddb97359f093cc3bd9860ccf4e080b82a441212f23566", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ddb97359f093cc3bd9860ccf4e080b82a441212f23760", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

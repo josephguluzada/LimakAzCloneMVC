@@ -21,13 +21,20 @@ using LimakAz;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\Views\_ViewImports.cshtml"
+using LimakAz.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\Views\_ViewImports.cshtml"
 using LimakAz.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8415a511c516877d4ea7faa40ece226d5af1ae46", @"/Views/Tariff/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e30b6e0997f98c918a47e88d6f40e38b69a58826", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dd6f2a77d9e2a36d17a1c2a347a193f5f1f0bc81", @"/Views/_ViewImports.cshtml")]
     public class Views_Tariff_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<TariffViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -69,7 +76,7 @@ using LimakAz.ViewModels;
                     <ul class=""breadcrumb"">
                         <li class=""breadcrumb-item"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8415a511c516877d4ea7faa40ece226d5af1ae465657", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8415a511c516877d4ea7faa40ece226d5af1ae465851", async() => {
                 WriteLiteral("Ana səhifə");
             }
             );
@@ -101,7 +108,7 @@ using LimakAz.ViewModels;
                                     <div class=""card tariff-card"">
                                         <div class=""tariff-card-header"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8415a511c516877d4ea7faa40ece226d5af1ae467709", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8415a511c516877d4ea7faa40ece226d5af1ae467903", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -182,7 +189,7 @@ using LimakAz.ViewModels;
                                     <div class=""card tariff-card"">
                                         <div class=""tariff-card-header"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8415a511c516877d4ea7faa40ece226d5af1ae4612584", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8415a511c516877d4ea7faa40ece226d5af1ae4612778", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -267,7 +274,7 @@ using LimakAz.ViewModels;
         </div>
 
     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8415a511c516877d4ea7faa40ece226d5af1ae4617374", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8415a511c516877d4ea7faa40ece226d5af1ae4617568", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

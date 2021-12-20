@@ -11602,3 +11602,9 @@ header #userPanel-nav {
   color: #f05835; }
   .active svg path {
     fill: #f05835; }
+
+
+
+.term-content-box .content p{
+    list-style:disc !important;
+}

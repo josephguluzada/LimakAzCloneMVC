@@ -1,0 +1,41 @@
+﻿@model List<Term>
+@{ int order = 0; }
+
+<div class="content-wrapper pb-0">
+    <div class="py-2">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Contact:</h1>
+            <a asp-action="create" asp-controller="term" asp-area="manage" class="btn btn-primary">Create</a>
+        </div>
+        <table id="example" class="table  table-hover table-bordered " cellspacing="0">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Term term in Model)
+                {
+                    order++;
+
+    <tr>
+        <td>@order</td>
+        <td>@term.Title</td>
+        <td>@(term.Desc.Length > 100 ? term.Desc.Substring(0,100) : term.Desc)</td>
+        <td>
+            <a asp-action="edit" asp-route-id="@term.Id" class="btn btn-success">Edit</a>
+            <a asp-action="deletefetch" asp-route-id="@term.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+        </td>
+    </tr>
+}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+

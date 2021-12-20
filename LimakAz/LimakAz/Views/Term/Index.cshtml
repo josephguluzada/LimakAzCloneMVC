@@ -1,0 +1,39 @@
+﻿@model List<Term>
+
+<div class="main-container">
+    <!-- Terms Start -->
+    <section id="terms">
+        <div class="block">
+            <div class="block-header">
+                <h2 class="block-title">Qaydalar</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Ana səhifə</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <span>Qaydalar</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-body">
+                <div class="accordion">
+                    @foreach (Term term in Model)
+                    {
+                        <div class="content-box term-content-box mb-20 @(term == Model[0] ? "active" : "")">
+                            <div class="label">@term.Title</div>
+                            <div class="content" style="padding:0 6rem;">
+                                <p>
+                                    @Html.Raw(term.Desc)
+                                </p>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Terms End -->
+</div>
+
+<script src="./assets/js/main.js"></script>

@@ -1,0 +1,33 @@
+﻿@model Term
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="mb-3 border-bottom pb-4">
+                <h1>Create a new item:</h1>
+            </div>
+            <form method="post" enctype="multipart/form-data" class="pt-3">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label asp-for="Title">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Title">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label asp-for="Desc">Desc</label>
+                        <textarea asp-for="Desc" id="desc" cols="30" rows="20"></textarea>
+                        <span class="text-danger" asp-validation-for="Desc"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
