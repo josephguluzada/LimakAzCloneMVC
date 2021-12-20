@@ -1,11 +1,11 @@
-﻿@model List<Faq>
+﻿@model List<Privacy>
 @{ int order = 0; }
 
 <div class="content-wrapper pb-0">
     <div class="py-2">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1>Faq:</h1>
-            <a asp-action="create" asp-controller="faq" asp-area="manage" class="btn btn-primary">Create</a>
+            <h1>Privacy:</h1>
+            <a asp-action="create" asp-controller="privacy" asp-area="manage" class="btn btn-primary">Create</a>
         </div>
         <table id="example" class="table  table-hover table-bordered " cellspacing="0">
             <thead>
@@ -17,19 +17,20 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Faq faq in Model)
+                @foreach (Privacy privacy in Model)
                 {
                     order++;
 
     <tr>
         <td>@order</td>
-        <td>@faq.Title</td>
-        <td>@(faq.Desc.Length > 100 ? faq.Desc.Substring(0,60) : faq.Desc)</td>
+        <td>@privacy.Title</td>
+        <td>@(privacy.Desc.Length > 100 ? privacy.Desc.Substring(0,60) : privacy.Desc)</td>
         <td>
-            <a asp-action="edit" asp-route-id="@faq.Id" class="btn btn-success">Edit</a>
-            <a asp-action="deletefetch" asp-route-id="@faq.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+            <a asp-action="edit" asp-route-id="@privacy.Id" class="btn btn-success">Edit</a>
+            <a asp-action="deletefetch" asp-route-id="@privacy.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
         </td>
-    </tr>}
+    </tr>
+}
             </tbody>
         </table>
 
