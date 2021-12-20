@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LimakAz.Models
 {
-    public class Term
+    public class Faq
     {
         public int Id { get; set; }
-        [StringLength(maximumLength:30)]
+        [StringLength(maximumLength: 250)]
         public string Title { get; set; }
-        [StringLength(maximumLength:5000)]
+        [StringLength(maximumLength: 5000)]
         public string Desc { get; set; }
     }
 }
