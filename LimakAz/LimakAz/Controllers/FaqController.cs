@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace LimakAz.Controllers
 {
-    public class TermController : Controller
+    public class FaqController : Controller
     {
         private readonly AppDbContext _context;
 
-        public TermController(AppDbContext context)
+        public FaqController(AppDbContext context)
         {
             _context = context;
         }
 
+
         public IActionResult Index()
         {
-            List<Term> terms = _context.Terms.ToList();
-            if (terms == null) return NotFound();
-
-            return View(terms);
+            List<Faq> faqs = _context.Faqs.ToList();
+            if (faqs == null) return NotFound();
+            return View(faqs);
         }
     }
 }

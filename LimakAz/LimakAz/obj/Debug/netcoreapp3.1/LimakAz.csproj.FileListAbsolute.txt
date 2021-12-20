@@ -163,3 +163,6 @@ C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netco
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Term\Create.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Term\Index.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Term\Edit.cshtml.g.cs
+C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Views\Faq\Index.cshtml.g.cs
+C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Faq\Index.cshtml.g.cs
+C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Faq\Create.cshtml.g.cs

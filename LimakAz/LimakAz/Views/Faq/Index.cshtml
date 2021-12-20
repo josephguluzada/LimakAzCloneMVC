@@ -1,0 +1,40 @@
+﻿@model List<Faq>
+<div class="main-container">
+    <!-- Terms Start -->
+    <section id="terms">
+        <div class="block">
+            <div class="block-header">
+                <h2 class="block-title">Suallar</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Ana səhifə</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <span>Suallar</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-body">
+                <div class="accordion">
+                    @foreach (Faq faq in Model)
+                    {
+                        <div class="content-box mb-20 @(faq == Model[0] ? "active" :"")">
+                            <div class="label">
+                                @faq.Title
+                            </div>
+                            <div class="content">
+                                <p>
+                                    @Html.Raw(faq.Desc)
+                                </p>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Terms End -->
+</div>
+
+<script src="~/assets/js/main.js"></script>
