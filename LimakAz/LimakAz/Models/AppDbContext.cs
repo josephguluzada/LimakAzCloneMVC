@@ -23,5 +23,6 @@ namespace LimakAz.Models
         public DbSet<Term> Terms { get; set; }
         public DbSet<Faq> Faqs { get; set; }
         public DbSet<Privacy> Privacies { get; set; }
+        public DbSet<About> Abouts { get; set; }
     }
 }
