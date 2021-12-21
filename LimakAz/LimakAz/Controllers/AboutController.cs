@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LimakAz.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,19 @@ namespace LimakAz.Controllers
 {
     public class AboutController : Controller
     {
+        private readonly AppDbContext _context;
+
+        public AboutController(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            List<About> abouts = _context.Abouts.ToList();
+            if (abouts == null) return NotFound();
+
+            return View(abouts);
         }
     }
 }

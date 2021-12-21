@@ -1,0 +1,40 @@
+﻿@model List<About>
+@{ int order = 0; }
+
+<div class="content-wrapper pb-0">
+    <div class="py-2">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>About:</h1>
+            <a asp-action="create" asp-controller="about" asp-area="manage" class="btn btn-primary">Create</a>
+        </div>
+        <table id="example" class="table  table-hover table-bordered " cellspacing="0">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (About about in Model)
+                {
+                    order++;
+
+    <tr>
+        <td>@order</td>
+        <td>@about.Title</td>
+        <td>@(about.Desc.Length > 100 ? about.Desc.Substring(0,60) : about.Desc)</td>
+        <td>
+            <a asp-action="edit" asp-route-id="@about.Id" class="btn btn-success">Edit</a>
+            <a asp-action="deletefetch" asp-route-id="@about.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+        </td>
+    </tr>}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+
