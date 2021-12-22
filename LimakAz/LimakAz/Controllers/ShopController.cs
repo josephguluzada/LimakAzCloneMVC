@@ -32,7 +32,6 @@ namespace LimakAz.Controllers
 
         public IActionResult Category(int id)
         {
-            //ViewBag.ShopItems = _context.ShopItems.Include(x=>x.Category).Where(x => x.CategoryId == id).ToList();
             ShopViewModel shopVM = new ShopViewModel
             {
                 Categories = _context.Categories.Where(x => !x.IsDeleted).ToList(),
