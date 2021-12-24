@@ -80,5 +80,88 @@ namespace LimakAz.Areas.Manage.Controllers
 
             return RedirectToAction("index", "shop");
         }
+
+        public IActionResult Edit(int id)
+        {
+            ShopItem shopItem = _context.ShopItems.FirstOrDefault(x => x.Id == id);
+            if (shopItem == null) return NotFound();
+
+            return View(shopItem);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(ShopItem shopItem)
+        {
+            ShopItem existShopItem = _context.ShopItems.FirstOrDefault(x => x.Id == shopItem.Id);
+
+            if (existShopItem == null) return NotFound();
+
+            if (shopItem.ImageFile != null)
+            {
+                if (shopItem.ImageFile.ContentType != "image/jpeg" && shopItem.ImageFile.ContentType != "image/png")
+                {
+                    ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
+                    return View();
+                }
+
+                if (shopItem.ImageFile.Length > 2097152)
+                {
+                    ModelState.AddModelError("ImageFile", "Image size must be lesser than 2mb");
+                    return View();
+                }
+
+                string fileName = shopItem.ImageFile.FileName;
+
+                if (fileName.Length > 64)
+                {
+                    fileName = fileName.Substring(fileName.Length - 64, 64);
+                }
+
+                string newFileName = Guid.NewGuid().ToString() + fileName;
+
+                string path = Path.Combine(_env.WebRootPath, "uploads/shop", newFileName);
+
+                using (FileStream stream = new FileStream(path, FileMode.Create))
+                {
+                    shopItem.ImageFile.CopyTo(stream);
+                }
+
+                if(existShopItem.Image != null)
+                {
+                    string deletePath = Path.Combine(_env.WebRootPath, "uploads/shop", existShopItem.Image);
+
+                    if (System.IO.File.Exists(deletePath))
+                    {
+                        System.IO.File.Delete(deletePath);
+                    }
+                }
+
+                existShopItem.Image = newFileName;
+
+            }
+            else if(shopItem.Image == null && existShopItem.Image != null)
+            {
+                string deletePath = Path.Combine(_env.WebRootPath, "uploads/shop", existShopItem.Image);
+
+                if (System.IO.File.Exists(deletePath))
+                {
+                    System.IO.File.Delete(deletePath);
+                }
+
+                existShopItem.Image = null;
+            }
+
+            if (!ModelState.IsValid) return View();
+
+            existShopItem.IsFeatured = shopItem.IsFeatured;
+            existShopItem.RedirectUrl = shopItem.RedirectUrl;
+            existShopItem.CategoryId = shopItem.CategoryId;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "shop");
+
+        }
     }
 }
