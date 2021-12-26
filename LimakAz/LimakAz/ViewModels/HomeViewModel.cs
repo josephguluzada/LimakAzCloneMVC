@@ -9,7 +9,7 @@ namespace LimakAz.ViewModels
     public class HomeViewModel
     {
         public List<Certificate> Certificates { get; set; }
-        public List<Announcement> Announcements { get; set; }
+        public List<News> News { get; set; }
         public List<ShopItem> ShopItems { get; set; }
     }
 }

@@ -1,0 +1,47 @@
+﻿@model News
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="mb-3 border-bottom pb-4">
+                <h1>Create a new item:</h1>
+            </div>
+            <form method="post" enctype="multipart/form-data" class="pt-3">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label asp-for="Title">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Title">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label asp-for="RedirectUrl">RedirectUrl</label>
+                        <input asp-for="RedirectUrl" class="form-control" placeholder="RedirectUrl">
+                        <span class="text-danger" asp-validation-for="RedirectUrl"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="IsFeatured">IsFeatured</label>
+                        <input asp-for="IsFeatured" type="checkbox" placeholder="IsFeatured">
+                        <span class="text-danger" asp-validation-for="IsFeatured"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label asp-for="ImageFile">ImageFile</label>
+                        <input asp-for="ImageFile" class="form-control" placeholder="ImageFile">
+                        <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label asp-for="CreatedAt">Date</label>
+                        <input asp-for="CreatedAt" class="form-control" placeholder="CreatedAt">
+                        <span class="text-danger" asp-validation-for="CreatedAt"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

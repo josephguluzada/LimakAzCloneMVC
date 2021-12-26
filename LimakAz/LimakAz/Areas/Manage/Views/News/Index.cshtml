@@ -4,32 +4,32 @@
 <div class="content-wrapper pb-0">
     <div class="py-2">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1>Tariffs:</h1>
-            <a asp-action="create" asp-controller="certificate" asp-area="manage" class="btn btn-primary">Create</a>
+            <h1>News:</h1>
+            <a asp-action="create" asp-controller="news" asp-area="manage" class="btn btn-primary">Create</a>
         </div>
         <table id="example" class="table table-striped table-hover table-bordered " cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Url</th>
-                    <th>IsFeatured</th>
+                    <th>CreatedAt</th>
                     <th>Image</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (News certificate in Model)
+                @foreach (News news in Model)
                 {
                     order++;
 
                     <tr>
                         <td>@order</td>
-                        <td>@certificate.RedirectUrl</td>
-                        <td>@certificate.IsFeatured</td>
-                        <td><img src="~/uploads/certificate/@certificate.Image" style="width:100px;height:60px;border-radius:0px;" /></td>
+                        <td>@news.RedirectUrl</td>
+                        <td>@news.CreatedAt.ToString("dd-mm-yyyy")</td>
+                        <td><img src="~/uploads/news/@news.Image" style="width:100px;height:60px;border-radius:0px;" /></td>
                         <td>
-                            <a asp-action="edit" asp-route-id="@certificate.Id" class="btn btn-success">Edit</a>
-                            <a asp-action="deletefetch" asp-route-id="@certificate.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+                            <a asp-action="edit" asp-route-id="@news.Id" class="btn btn-success">Edit</a>
+                            <a asp-action="deletefetch" asp-route-id="@news.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
                         </td>
                     </tr>
                 }

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Folder Include="Areas\Manage\Views\Dashboard\" />
     <Folder Include="wwwroot\uploads\certificate\" />
+    <Folder Include="wwwroot\uploads\news\" />
     <Folder Include="wwwroot\uploads\shop\" />
   </ItemGroup>
 

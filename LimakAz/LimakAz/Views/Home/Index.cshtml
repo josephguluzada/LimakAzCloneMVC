@@ -129,17 +129,17 @@
             <div class="block-body">
                 <div class="news-list">
                     <div class="row">
-                        @foreach (var announcement in Model.Announcements)
+                        @foreach (var news in Model.News)
                         {
                             <div class="col-sm-6 col-md-4 col-12">
                                 <a href="#" class="news-card">
                                     <article class="card">
-                                        <img src="~/assets/images/@announcement.Image" alt="" class="card-img-top">
+                                        <img src="~/uploads/news/@news.Image" alt="" class="card-img-top">
                                         <div class="card-body">
-                                            <h4 class="card-title">@announcement.Title</h4>
+                                            <h4 class="card-title">@news.Title</h4>
                                             <p class="card-text news-card-date">
                                                 <img src="~/assets/images/calendar.svg" alt="">
-                                                <span>@announcement.CreatedAt</span>
+                                                <span>@news.CreatedAt</span>
                                             </p>
                                         </div>
                                     </article>

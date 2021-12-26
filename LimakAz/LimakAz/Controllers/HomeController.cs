@@ -21,7 +21,7 @@ namespace LimakAz.Controllers
             HomeViewModel homeVM = new HomeViewModel
             {
                 Certificates = _context.Certificates.Where(x => x.IsFeatured).ToList(),
-                Announcements = _context.Announcements.Take(3).ToList(),
+                News = _context.News.Where(x=>x.IsFeatured).Take(3).ToList(),
                 ShopItems = _context.ShopItems.Where(x=>x.IsFeatured).Take(12).ToList()
             };
 
