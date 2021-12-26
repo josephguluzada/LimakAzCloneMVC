@@ -43,7 +43,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             if(shopItem.ImageFile != null)
             {
-                if(shopItem.ImageFile.ContentType != "image/jpeg" && shopItem.ImageFile.ContentType != "image/png")
+                if(shopItem.ImageFile.ContentType != "image/jpeg" && shopItem.ImageFile.ContentType != "image/png" && shopItem.ImageFile.ContentType != "image/svg+xml")
                 {
                     ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
                     return View();
@@ -104,7 +104,7 @@ namespace LimakAz.Areas.Manage.Controllers
 
             if (shopItem.ImageFile != null)
             {
-                if (shopItem.ImageFile.ContentType != "image/jpeg" && shopItem.ImageFile.ContentType != "image/png")
+                if (shopItem.ImageFile.ContentType != "image/jpeg" && shopItem.ImageFile.ContentType != "image/png" && shopItem.ImageFile.ContentType != "image/svg+xml")
                 {
                     ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
                     return View();

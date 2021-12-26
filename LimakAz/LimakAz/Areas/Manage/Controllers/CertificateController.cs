@@ -39,7 +39,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             if (certificate.ImageFile != null)
             {
-                if (certificate.ImageFile.ContentType != "image/jpeg" && certificate.ImageFile.ContentType != "image/png")
+                if (certificate.ImageFile.ContentType != "image/jpeg" && certificate.ImageFile.ContentType != "image/png" && certificate.ImageFile.ContentType != "image/svg+xml")
                 {
                     ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
                     return View();
@@ -79,6 +79,86 @@ namespace LimakAz.Areas.Manage.Controllers
             return RedirectToAction("index", "certificate");
         }
 
+        public IActionResult Edit(int id)
+        {
+            Certificate certificate = _context.Certificates.FirstOrDefault(x => x.Id == id);
+            if (certificate == null) return NotFound();
 
+            return View(certificate);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Certificate certificate)
+        {
+            Certificate existCertificate = _context.Certificates.FirstOrDefault(x => x.Id == certificate.Id);
+
+            if (existCertificate == null) return NotFound();
+
+            if (certificate.ImageFile != null)
+            {
+                if (certificate.ImageFile.ContentType != "image/jpeg" && certificate.ImageFile.ContentType != "image/png" && certificate.ImageFile.ContentType != "image/svg+xml")
+                {
+                    ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
+                    return View();
+                }
+
+                if (certificate.ImageFile.Length > 2097152)
+                {
+                    ModelState.AddModelError("ImageFile", "Image size must be lesser than 2mb");
+                    return View();
+                }
+
+                string fileName = certificate.ImageFile.FileName;
+
+                if (fileName.Length > 64)
+                {
+                    fileName = fileName.Substring(fileName.Length - 64, 64);
+                }
+
+                string newFileName = Guid.NewGuid().ToString() + fileName;
+
+                string path = Path.Combine(_env.WebRootPath, "uploads/certificate", newFileName);
+
+                using (FileStream stream = new FileStream(path, FileMode.Create))
+                {
+                    certificate.ImageFile.CopyTo(stream);
+                }
+
+                if (existCertificate.Image != null)
+                {
+                    string deletePath = Path.Combine(_env.WebRootPath, "uploads/certificate", existCertificate.Image);
+
+                    if (System.IO.File.Exists(deletePath))
+                    {
+                        System.IO.File.Delete(deletePath);
+                    }
+                }
+
+                existCertificate.Image = newFileName;
+
+            }
+            else if (certificate.Image == null && existCertificate.Image != null)
+            {
+                string deletePath = Path.Combine(_env.WebRootPath, "uploads/certificate", existCertificate.Image);
+
+                if (System.IO.File.Exists(deletePath))
+                {
+                    System.IO.File.Delete(deletePath);
+                }
+
+                existCertificate.Image = null;
+            }
+
+            if (!ModelState.IsValid) return View();
+
+            existCertificate.IsFeatured = certificate.IsFeatured;
+            existCertificate.RedirectUrl = certificate.RedirectUrl;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "certificate");
+
+        }
     }
 }

@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="img-box text-center" style="width:150px;height:100px;">
-                    <img src="~/uploads/certificate/@Model.Image" style="width:100px;height:50px;" />
+                    <img src="~/uploads/certificate/@(Model.Image!=null?Model.Image:"")" style="width:100px;height:50px;" />
                     <input type="hidden" name="Image" value="@Model.Image" />
                 </div>
                 <div class="form-group">
