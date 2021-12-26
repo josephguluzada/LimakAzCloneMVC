@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Desktop\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj": {}
+    "C:\\Users\\asus\\Desktop\\AllProject\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Desktop\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj": {
+    "C:\\Users\\asus\\Desktop\\AllProject\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Desktop\\AllProject\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj",
         "projectName": "LimakAz",
-        "projectPath": "C:\\Users\\asus\\Desktop\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj",
+        "projectPath": "C:\\Users\\asus\\Desktop\\AllProject\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\LimakAzCloneMVC\\LimakAz\\LimakAz\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Desktop\\AllProject\\LimakAzCloneMVC\\LimakAz\\LimakAz\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
