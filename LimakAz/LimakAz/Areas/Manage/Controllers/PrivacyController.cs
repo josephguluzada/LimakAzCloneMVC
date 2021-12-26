@@ -47,7 +47,7 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Edit(int id)
         {
             Privacy privacy = _context.Privacies.FirstOrDefault(x => x.Id == id);
-            if (privacy == null) return NotFound();
+            if (privacy == null) RedirectToAction("index", "error");
 
             return View(privacy);
         }
@@ -58,7 +58,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             Privacy existPrivacy = _context.Privacies.FirstOrDefault(x => x.Id == privacy.Id);
 
-            if (existPrivacy == null) return NotFound();
+            if (existPrivacy == null) RedirectToAction("index", "error");
             if (!ModelState.IsValid) return View();
 
             existPrivacy.Title = privacy.Title;

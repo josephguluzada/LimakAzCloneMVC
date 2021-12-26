@@ -93,7 +93,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             Certificate existCertificate = _context.Certificates.FirstOrDefault(x => x.Id == certificate.Id);
 
-            if (existCertificate == null) return NotFound();
+            if (existCertificate == null) return RedirectToAction("index", "error");
 
             if (certificate.ImageFile != null)
             {

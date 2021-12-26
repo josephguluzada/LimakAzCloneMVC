@@ -47,7 +47,7 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Edit(int id)
         {
             About about = _context.Abouts.FirstOrDefault(x => x.Id == id);
-            if (about == null) return NotFound();
+            if (about == null) return RedirectToAction("index", "error");
 
             return View(about);
         }
@@ -59,7 +59,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             About existAbout = _context.Abouts.FirstOrDefault(x => x.Id == about.Id);
 
-            if (existAbout == null) return NotFound();
+            if (existAbout == null) return RedirectToAction("index", "error");
             if (!ModelState.IsValid) return View();
 
             existAbout.Title = about.Title;

@@ -86,7 +86,7 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Edit(int id)
         {
             ShopItem shopItem = _context.ShopItems.FirstOrDefault(x => x.Id == id);
-            if (shopItem == null) return NotFound();
+            if (shopItem == null) return RedirectToAction("index", "error");
 
             ViewBag.Categories = _context.Categories.ToList();
 
@@ -100,7 +100,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             ShopItem existShopItem = _context.ShopItems.FirstOrDefault(x => x.Id == shopItem.Id);
 
-            if (existShopItem == null) return NotFound();
+            if (existShopItem == null) return RedirectToAction("index", "error");
 
             if (shopItem.ImageFile != null)
             {

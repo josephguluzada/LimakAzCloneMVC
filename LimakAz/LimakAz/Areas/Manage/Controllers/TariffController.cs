@@ -43,7 +43,7 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Edit(int id)
         {
             Tariff tariff = _context.Tariffs.FirstOrDefault(x => x.Id == id);
-            if (tariff == null) return NotFound();
+            if (tariff == null) return RedirectToAction("index", "error");
 
             return View(tariff);
         }
@@ -53,7 +53,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             Tariff existTariff = _context.Tariffs.FirstOrDefault(x => x.Id == tariff.Id);
 
-            if (existTariff == null) return NotFound();
+            if (existTariff == null) return RedirectToAction("index", "error");
             if (!ModelState.IsValid) return View();
 
             existTariff.Weight = tariff.Weight;

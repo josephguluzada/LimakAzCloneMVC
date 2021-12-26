@@ -45,7 +45,7 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Edit(int id)
         {
             Term term = _context.Terms.FirstOrDefault(x => x.Id == id);
-            if (term == null) return NotFound();
+            if (term == null) return RedirectToAction("index", "error");
 
             return View(term);
         }
@@ -56,7 +56,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             Term existTerm = _context.Terms.FirstOrDefault(x => x.Id == term.Id);
 
-            if (existTerm == null) return NotFound();
+            if (existTerm == null) return RedirectToAction("index", "error");
             if (!ModelState.IsValid) return View();
 
             existTerm.Title = term.Title;

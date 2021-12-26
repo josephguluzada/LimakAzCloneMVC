@@ -44,7 +44,7 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Edit(int id)
         {
             Contact contact = _context.Contacts.FirstOrDefault(x => x.Id == id);
-            if (contact == null) return NotFound();
+            if (contact == null) return RedirectToAction("index", "error");
 
             return View(contact);
         }
@@ -55,7 +55,7 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             Contact existContact = _context.Contacts.FirstOrDefault(x => x.Id == contact.Id);
 
-            if (existContact == null) return NotFound();
+            if (existContact == null) return RedirectToAction("index", "error");
             if (!ModelState.IsValid) return View();
 
             existContact.Address = contact.Address;
