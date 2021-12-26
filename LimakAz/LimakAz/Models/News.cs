@@ -19,5 +19,6 @@ namespace LimakAz.Models
         [NotMapped]
         public IFormFile ImageFile { get; set; }
         public bool  IsFeatured { get; set; }
+        public string RedirectUrl { get; set; }
     }
 }
