@@ -160,5 +160,29 @@ namespace LimakAz.Areas.Manage.Controllers
             return RedirectToAction("index", "certificate");
 
         }
+
+        public IActionResult DeleteFetch(int id)
+        {
+            Certificate certificate = _context.Certificates.FirstOrDefault(x => x.Id == id);
+            if (certificate == null) return Json(new { status = 404 });
+
+            try
+            {
+                _context.Certificates.Remove(certificate);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                return Json(new { status = 500 });
+            }
+            string deletePath = Path.Combine(_env.WebRootPath, "uploads/certificate", certificate.Image);
+            if (System.IO.File.Exists(deletePath))
+            {
+                System.IO.File.Delete(deletePath);
+            }
+
+            return Json(new { status = 200 });
+        }
     }
 }
