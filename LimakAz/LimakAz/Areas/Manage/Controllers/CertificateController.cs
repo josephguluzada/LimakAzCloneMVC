@@ -82,7 +82,7 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Edit(int id)
         {
             Certificate certificate = _context.Certificates.FirstOrDefault(x => x.Id == id);
-            if (certificate == null) return NotFound();
+            if (certificate == null) return RedirectToAction("index","error");
 
             return View(certificate);
         }
