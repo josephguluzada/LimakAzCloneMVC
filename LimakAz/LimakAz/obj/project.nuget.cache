@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jAiRTpQUGzJL9LWJYXEklWa++DbGyUG9PmMJttP+q0/tv8pSxHV+CeT4VT3MNdzPlsOwn0QtCsHWbnJiPr/FEg==",
+  "dgSpecHash": "UK9NRfyh0f4L8bf8SpPx/oijgIVhb+CiYJ4P8HSLK7SjOB4WLSfhdIpHC8r4lib7mQvlUqF2H4b1AXXYZg9aTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asus\\Desktop\\AllProject\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj",
+  "projectFilePath": "C:\\Users\\asus\\Desktop\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

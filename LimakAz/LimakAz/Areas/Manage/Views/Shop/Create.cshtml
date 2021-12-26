@@ -1,4 +1,8 @@
 ﻿@model ShopItem
+@{ 
+    List<Category> categories = ViewBag.Categories;
+}
+
 
 <div class="main-panel">
     <div class="content-wrapper">
@@ -14,9 +18,8 @@
                         <span class="text-danger" asp-validation-for="RedirectUrl"></span>
                     </div>
                     <div class="form-group col-md-5">
-                        <label asp-for="CategoryId">CategoryId</label>
-                        <input asp-for="CategoryId" class="form-control" placeholder="CategoryId">
-                        <span class="text-danger" asp-validation-for="CategoryId"></span>
+                        <label>Category</label>
+                        <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Id"))"></select>
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="IsFeatured">IsFeatured</label>

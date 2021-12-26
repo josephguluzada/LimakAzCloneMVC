@@ -32,6 +32,8 @@ namespace LimakAz.Areas.Manage.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.Categories = _context.Categories.ToList();
+
             return View();
         }
 
@@ -85,6 +87,9 @@ namespace LimakAz.Areas.Manage.Controllers
         {
             ShopItem shopItem = _context.ShopItems.FirstOrDefault(x => x.Id == id);
             if (shopItem == null) return NotFound();
+
+            ViewBag.Categories = _context.Categories.ToList();
+
 
             return View(shopItem);
         }
