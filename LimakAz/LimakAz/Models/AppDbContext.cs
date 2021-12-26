@@ -24,5 +24,6 @@ namespace LimakAz.Models
         public DbSet<Faq> Faqs { get; set; }
         public DbSet<Privacy> Privacies { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<News> News { get; set; }
     }
 }
