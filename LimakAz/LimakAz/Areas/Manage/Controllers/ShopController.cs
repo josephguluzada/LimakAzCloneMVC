@@ -163,5 +163,29 @@ namespace LimakAz.Areas.Manage.Controllers
             return RedirectToAction("index", "shop");
 
         }
+
+        public IActionResult DeleteFetch(int id)
+        {
+            ShopItem shopItem = _context.ShopItems.FirstOrDefault(x => x.Id == id);
+            if (shopItem == null) return Json(new { status = 404 });
+
+            try
+            {
+                _context.ShopItems.Remove(shopItem);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                return Json(new { status = 500 });
+            }
+            string deletePath = Path.Combine(_env.WebRootPath, "uploads/shop", shopItem.Image);
+            if (System.IO.File.Exists(deletePath))
+            {
+                System.IO.File.Delete(deletePath);
+            }
+
+            return Json(new { status = 200 });
+        }
     }
 }
