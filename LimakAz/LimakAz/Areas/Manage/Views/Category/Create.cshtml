@@ -1,0 +1,48 @@
+﻿@model Category
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="mb-3 border-bottom pb-4">
+                <h1>Create a new item:</h1>
+            </div>
+            <form method="post" enctype="multipart/form-data" class="pt-3">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label asp-for="İcon">Name</label>
+                        <select class="form-control" asp-for="İcon" asp-items="@(new SelectList(ViewBag.Categories,"İcon","İcon"))"></select>
+                        <span class="text-danger" asp-validation-for="İcon"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="IsDeleted">IsDeleted</label>
+                        <input asp-for="IsDeleted"  placeholder="IsDeleted">
+                        <span class="text-danger" asp-validation-for="IsDeleted"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section CkEditor{
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+    <script src="~/manage/ckeditor5-build-classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.getElementById("desc"))
+            .catch(err => {
+                console.log(err)
+            })
+    </script>
+}
+
+
+
