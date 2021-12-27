@@ -1,0 +1,42 @@
+﻿@model List<Category>
+@{ int order = 0; }
+
+<div class="content-wrapper pb-0">
+    <div class="py-2">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Faq:</h1>
+            <a asp-action="create" asp-controller="category" asp-area="manage" class="btn btn-primary">Create</a>
+        </div>
+        <table id="example" class="table  table-hover table-bordered " cellspacing="0">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>İcon</th>
+                    <th>IsDeleted</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Category category in Model)
+                {
+                    order++;
+
+                <tr>
+                    <td>@order</td>
+                    <td>@category.Name</td>
+                    <td>@category.İcon</td>
+                    <td>@category.IsDeleted</td>
+                    <td>
+                        <a asp-action="edit" asp-route-id="@category.Id" class="btn btn-success">Edit</a>
+                        <a asp-action="deletefetch" asp-route-id="@category.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+                    </td>
+                </tr>
+}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
