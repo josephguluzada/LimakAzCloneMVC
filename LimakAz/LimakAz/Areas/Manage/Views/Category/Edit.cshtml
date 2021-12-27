@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="mb-3 border-bottom pb-4">
-                <h1>Create a new item:</h1>
+                <h1>Edit page:</h1>
             </div>
             <form method="post" enctype="multipart/form-data" class="pt-3">
                 <div class="form-row">
@@ -20,12 +20,12 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label asp-for="IsDeleted">IsDeleted</label>
-                        <input asp-for="IsDeleted"  placeholder="IsDeleted">
+                        <input asp-for="IsDeleted" placeholder="IsDeleted">
                         <span class="text-danger" asp-validation-for="IsDeleted"></span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
                 </div>
             </form>
         </div>

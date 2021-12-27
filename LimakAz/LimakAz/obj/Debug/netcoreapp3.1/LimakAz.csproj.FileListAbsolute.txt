@@ -367,3 +367,4 @@ C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netco
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\News\Edit.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Index.cshtml.g.cs
 C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Create.cshtml.g.cs
+C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Edit.cshtml.g.cs

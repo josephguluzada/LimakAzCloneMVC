@@ -43,5 +43,32 @@ namespace LimakAz.Areas.Manage.Controllers
 
             return RedirectToAction("index", "category");
         }
+
+        public IActionResult Edit(int id)
+        {
+            Category category = _context.Categories.FirstOrDefault(x => x.Id == id);
+            if (category == null) return RedirectToAction("index", "error");
+            ViewBag.Categories = _context.Categories.ToList();
+
+            return View(category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Category category)
+        {
+            Category existCategory = _context.Categories.FirstOrDefault(x => x.Id == category.Id);
+            if (existCategory == null) return RedirectToAction("index", "error");
+
+            if (!ModelState.IsValid) return View();
+
+            existCategory.Name = category.Name;
+            existCategory.İcon = category.İcon;
+            existCategory.IsDeleted = category.IsDeleted;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "category");
+        }
     }
 }
