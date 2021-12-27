@@ -161,5 +161,29 @@ namespace LimakAz.Areas.Manage.Controllers
             return RedirectToAction("index", "news");
 
         }
+
+        public IActionResult DeleteFetch(int id)
+        {
+            News news = _context.News.FirstOrDefault(x => x.Id == id);
+            if (news == null) return Json(new { status = 404 });
+
+            try
+            {
+                _context.News.Remove(news);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                return Json(new { status = 500 });
+            }
+            string deletePath = Path.Combine(_env.WebRootPath, "uploads/news", news.Image);
+            if (System.IO.File.Exists(deletePath))
+            {
+                System.IO.File.Delete(deletePath);
+            }
+
+            return Json(new { status = 200 });
+        }
     }
 }
