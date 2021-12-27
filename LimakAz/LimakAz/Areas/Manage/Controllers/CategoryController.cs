@@ -70,5 +70,16 @@ namespace LimakAz.Areas.Manage.Controllers
 
             return RedirectToAction("index", "category");
         }
+
+        public IActionResult DeleteFetch(int id)
+        {
+            Category category = _context.Categories.FirstOrDefault(x => x.Id == id);
+            if (category == null) return Json(new { status = 404 });
+
+            _context.Categories.Remove(category);
+            _context.SaveChanges();
+
+            return Json(new { status = 200 });
+        }
     }
 }
