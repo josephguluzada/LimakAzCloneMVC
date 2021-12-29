@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "jAiRTpQUGzJL9LWJYXEklWa++DbGyUG9PmMJttP+q0/tv8pSxHV+CeT4VT3MNdzPlsOwn0QtCsHWbnJiPr/FEg==",
+  "dgSpecHash": "tt70D3wCGge1ErP0Bc9YCxXJ+LOW1TEUFgdDKFLYOft3fYgqHXWHyIPD9TPyU/YofnfARg9YY0/ay6OrPBn+RQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\asus\\Desktop\\AllProject\\LimakAzCloneMVC\\LimakAz\\LimakAz\\LimakAz.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.21\\microsoft.aspnetcore.cryptography.internal.3.1.21.nupkg.sha512",
+    "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.21\\microsoft.aspnetcore.cryptography.keyderivation.3.1.21.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.21\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.21.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -32,6 +35,8 @@
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.21\\microsoft.extensions.configuration.binder.3.1.21.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.21\\microsoft.extensions.dependencyinjection.3.1.21.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.21\\microsoft.extensions.dependencyinjection.abstractions.3.1.21.nupkg.sha512",
+    "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.21\\microsoft.extensions.identity.core.3.1.21.nupkg.sha512",
+    "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.21\\microsoft.extensions.identity.stores.3.1.21.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.logging\\3.1.21\\microsoft.extensions.logging.3.1.21.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.21\\microsoft.extensions.logging.abstractions.3.1.21.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.options\\3.1.21\\microsoft.extensions.options.3.1.21.nupkg.sha512",
