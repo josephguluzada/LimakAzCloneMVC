@@ -98,6 +98,8 @@ namespace LimakAz.Areas.Manage.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(ShopItem shopItem)
         {
+            ViewBag.Categories = _context.Categories.ToList();
+
             ShopItem existShopItem = _context.ShopItems.FirstOrDefault(x => x.Id == shopItem.Id);
 
             if (existShopItem == null) return RedirectToAction("index", "error");
@@ -107,13 +109,13 @@ namespace LimakAz.Areas.Manage.Controllers
                 if (shopItem.ImageFile.ContentType != "image/jpeg" && shopItem.ImageFile.ContentType != "image/png" && shopItem.ImageFile.ContentType != "image/svg+xml")
                 {
                     ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
-                    return View();
+                    return View(shopItem);
                 }
 
                 if (shopItem.ImageFile.Length > 2097152)
                 {
                     ModelState.AddModelError("ImageFile", "Image size must be lesser than 2mb");
-                    return View();
+                    return View(shopItem);
                 }
 
                 string fileName = shopItem.ImageFile.FileName;
@@ -157,7 +159,7 @@ namespace LimakAz.Areas.Manage.Controllers
                 existShopItem.Image = null;
             }
 
-            if (!ModelState.IsValid) return View();
+            if (!ModelState.IsValid) return View(existShopItem);
 
             existShopItem.IsFeatured = shopItem.IsFeatured;
             existShopItem.RedirectUrl = shopItem.RedirectUrl;

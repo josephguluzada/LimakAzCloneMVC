@@ -100,13 +100,13 @@ namespace LimakAz.Areas.Manage.Controllers
                 if (certificate.ImageFile.ContentType != "image/jpeg" && certificate.ImageFile.ContentType != "image/png" && certificate.ImageFile.ContentType != "image/svg+xml")
                 {
                     ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
-                    return View();
+                    return View(certificate);
                 }
 
                 if (certificate.ImageFile.Length > 2097152)
                 {
                     ModelState.AddModelError("ImageFile", "Image size must be lesser than 2mb");
-                    return View();
+                    return View(certificate);
                 }
 
                 string fileName = certificate.ImageFile.FileName;
@@ -150,7 +150,7 @@ namespace LimakAz.Areas.Manage.Controllers
                 existCertificate.Image = null;
             }
 
-            if (!ModelState.IsValid) return View();
+            if (!ModelState.IsValid) return View(existCertificate);
 
             existCertificate.IsFeatured = certificate.IsFeatured;
             existCertificate.RedirectUrl = certificate.RedirectUrl;

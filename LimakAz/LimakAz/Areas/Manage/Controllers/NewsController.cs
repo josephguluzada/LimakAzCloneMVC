@@ -99,13 +99,13 @@ namespace LimakAz.Areas.Manage.Controllers
                 if (news.ImageFile.ContentType != "image/jpeg" && news.ImageFile.ContentType != "image/png" && news.ImageFile.ContentType != "image/svg+xml")
                 {
                     ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
-                    return View();
+                    return View(news);
                 }
 
                 if (news.ImageFile.Length > 2097152)
                 {
                     ModelState.AddModelError("ImageFile", "Image size must be lesser than 2mb");
-                    return View();
+                    return View(news);
                 }
 
                 string fileName = news.ImageFile.FileName;
