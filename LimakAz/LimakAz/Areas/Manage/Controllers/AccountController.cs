@@ -37,11 +37,16 @@ namespace LimakAz.Areas.Manage.Controllers
             //IdentityRole role3 = new IdentityRole("Member");
             //await _roleManager.CreateAsync(role3);
 
-            AppUser appUser = await _userManager.FindByNameAsync("SuperAdmin");
+            //AppUser appUser = await _userManager.FindByNameAsync("SuperAdmin");
 
-            await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
+            //await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
 
 
+            return View();
+        }
+
+        public IActionResult Login()
+        {
             return View();
         }
     }
