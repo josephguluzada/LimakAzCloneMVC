@@ -26,5 +26,6 @@ namespace LimakAz.Models
         public DbSet<Privacy> Privacies { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<News> News { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
     }
 }
