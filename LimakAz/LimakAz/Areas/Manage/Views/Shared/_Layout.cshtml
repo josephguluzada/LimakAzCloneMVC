@@ -18,7 +18,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Plus Admin</title>
+    <title>Admin Panel</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/manage/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/manage/vendors/flag-icon-css/css/flag-icon.min.css">
@@ -258,7 +258,7 @@
                             <a class="nav-link" href="#">Status</a>
                         </li>
                         <li class="nav-item nav-logout d-none d-md-block">
-                            <button class="btn btn-sm btn-danger">Trailing</button>
+                            <button class="btn btn-sm btn-success">Online</button>
                         </li>
                         <li class="nav-item nav-profile dropdown d-none d-md-block">
                             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -283,8 +283,8 @@
                             </div>
                         </li>
                         <li class="nav-item nav-logout d-none d-lg-block">
-                            <a class="nav-link" href="index.html">
-                                <i class="mdi mdi-home-circle"></i>
+                            <a class="nav-link" asp-action="logout" asp-controller="account">
+                                <i class="mdi mdi-logout"></i>
                             </a>
                         </li>
                     </ul>

@@ -76,5 +76,11 @@ namespace LimakAz.Areas.Manage.Controllers
 
             return RedirectToAction("index","shop");
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("login", "account");
+        }
     }
 }
