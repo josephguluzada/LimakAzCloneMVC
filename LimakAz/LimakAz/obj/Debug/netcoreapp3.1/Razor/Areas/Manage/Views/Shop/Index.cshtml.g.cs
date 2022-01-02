@@ -19,8 +19,15 @@ using LimakAz.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\Areas\Manage\Views\_ViewImports.cshtml"
+using LimakAz.Areas.Manage.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f66af84cb6273caf914dc4a5c05500616b206c0b", @"/Areas/Manage/Views/Shop/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"158f24f70d6330eafbaa94ccb3225d3553004082", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fb95716c284d46820be0c83eccd209e1313eb223", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     public class Areas_Manage_Views_Shop_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<ShopItem>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -65,7 +72,7 @@ using LimakAz.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"content-wrapper pb-0\">\r\n    <div class=\"py-2\">\r\n        <div class=\"d-flex justify-content-between align-items-center mb-3\">\r\n            <h1>Tariffs:</h1>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f66af84cb6273caf914dc4a5c05500616b206c0b6525", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f66af84cb6273caf914dc4a5c05500616b206c0b6749", async() => {
                 WriteLiteral("Create");
             }
             );
@@ -143,7 +150,7 @@ using LimakAz.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                    <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f66af84cb6273caf914dc4a5c05500616b206c0b10175", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f66af84cb6273caf914dc4a5c05500616b206c0b10399", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -167,7 +174,7 @@ AddHtmlAttributeValue("", 1158, shopItem.Image, 1158, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f66af84cb6273caf914dc4a5c05500616b206c0b11828", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f66af84cb6273caf914dc4a5c05500616b206c0b12052", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -199,7 +206,7 @@ AddHtmlAttributeValue("", 1158, shopItem.Image, 1158, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f66af84cb6273caf914dc4a5c05500616b206c0b14117", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f66af84cb6273caf914dc4a5c05500616b206c0b14341", async() => {
                 WriteLiteral("Delete");
             }
             );

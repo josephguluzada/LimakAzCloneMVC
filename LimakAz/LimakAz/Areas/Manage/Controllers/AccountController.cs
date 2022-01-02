@@ -1,4 +1,5 @@
-﻿using LimakAz.Models;
+﻿using LimakAz.Areas.Manage.ViewModels;
+using LimakAz.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -48,6 +49,14 @@ namespace LimakAz.Areas.Manage.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(LoginViewModel loginVM)
+        {
+
+            return Ok(loginVM);
         }
     }
 }

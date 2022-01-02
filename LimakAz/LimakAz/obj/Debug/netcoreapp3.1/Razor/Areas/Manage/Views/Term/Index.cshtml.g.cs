@@ -19,8 +19,15 @@ using LimakAz.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\asus\Desktop\AllProject\LimakAzCloneMVC\LimakAz\LimakAz\Areas\Manage\Views\_ViewImports.cshtml"
+using LimakAz.Areas.Manage.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"79deee39bb45fc222c98f98ce5c75125c8752a27", @"/Areas/Manage/Views/Term/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"158f24f70d6330eafbaa94ccb3225d3553004082", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fb95716c284d46820be0c83eccd209e1313eb223", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     public class Areas_Manage_Views_Term_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Term>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -63,7 +70,7 @@ using LimakAz.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"content-wrapper pb-0\">\r\n    <div class=\"py-2\">\r\n        <div class=\"d-flex justify-content-between align-items-center mb-3\">\r\n            <h1>Term:</h1>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79deee39bb45fc222c98f98ce5c75125c8752a275978", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79deee39bb45fc222c98f98ce5c75125c8752a276202", async() => {
                 WriteLiteral("Create");
             }
             );
@@ -131,7 +138,7 @@ using LimakAz.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n        <td>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79deee39bb45fc222c98f98ce5c75125c8752a279177", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79deee39bb45fc222c98f98ce5c75125c8752a279401", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -163,7 +170,7 @@ using LimakAz.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79deee39bb45fc222c98f98ce5c75125c8752a2711437", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79deee39bb45fc222c98f98ce5c75125c8752a2711661", async() => {
                 WriteLiteral("Delete");
             }
             );
