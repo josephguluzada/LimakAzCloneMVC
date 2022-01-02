@@ -58,6 +58,8 @@
                                         <input asp-for="Password" placeholder="Şifrə"
                                                required="required" autocomplete="new-password" aria-required="true"
                                                class="form-control">
+                                        <span style="font-size:13px" class="text-danger" asp-validation-for="Password"></span>
+
                                         <a class="visiblity-btn showPass">
                                             <span aria-hidden="true" class="show_p hide-eye"></span>
                                         </a>
@@ -67,6 +69,8 @@
                                                placeholder="Şifrənin təkrarı" required="required"
                                                autocomplete="new-password" aria-required="true"
                                                class="form-control">
+                                        <span style="font-size:13px" class="text-danger" asp-validation-for="ConfirmPassword"></span>
+
                                         <a class="visiblity-btn showPass">
                                             <span aria-hidden="true" class="show_p hide-eye"></span>
                                         </a>
