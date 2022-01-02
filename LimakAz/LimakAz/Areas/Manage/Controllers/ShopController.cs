@@ -1,4 +1,5 @@
 ﻿using LimakAz.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace LimakAz.Areas.Manage.Controllers
 {
     [Area("manage")]
-
+    [Authorize(Roles ="Admin,SuperAdmin")]
     public class ShopController : Controller
     {
         private readonly AppDbContext _context;

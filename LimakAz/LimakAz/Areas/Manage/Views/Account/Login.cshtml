@@ -29,7 +29,7 @@
     <!--===============================================================================================-->
 </head>
 
-<body>
+<body style="overflow-y:hidden;">
 
     <div class="limiter">
         <div class="container-login100">
@@ -60,7 +60,11 @@
                         </span>
                         <span class="text-danger" asp-validation-for="Password"></span>
                     </div>
-
+                    <div  style="display:flex;align-items:center;">
+                        <input class="input100" type="checkbox" asp-for="IsPersistent" placeholder="IsPersistant" style="display:inline-block;width:max-content;margin-right:5px;">
+                        <label style="display:inline-block;width:max-content;margin-bottom:0">Remember me</label>
+                    </div>
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn">
                             Login

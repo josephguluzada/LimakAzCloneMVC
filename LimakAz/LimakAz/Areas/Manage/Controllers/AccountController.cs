@@ -14,11 +14,13 @@ namespace LimakAz.Areas.Manage.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(UserManager<AppUser> userManager,RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<AppUser> userManager,RoleManager<IdentityRole> roleManager,SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _signInManager = signInManager;
         }
 
         public async  Task<IActionResult> Index()
@@ -29,7 +31,7 @@ namespace LimakAz.Areas.Manage.Controllers
             //    FullName = "Yusif Guluzada"
             //};
 
-            //await _userManager.CreateAsync(admin);
+            //await _userManager.CreateAsync(admin,"Admin123");
 
             //IdentityRole role1 = new IdentityRole("SuperAdmin");
             //await _roleManager.CreateAsync(role1);
@@ -53,10 +55,26 @@ namespace LimakAz.Areas.Manage.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(LoginViewModel loginVM)
+        public async Task<IActionResult> Login(LoginViewModel loginVM)
         {
+            if (!ModelState.IsValid) return View();
 
-            return Ok(loginVM);
+            AppUser admin = _userManager.Users.FirstOrDefault(x => x.NormalizedUserName == loginVM.UserName.ToUpper() && x.IsAdmin);
+
+            if(admin == null)
+            {
+                ModelState.AddModelError("", "İstifadəçi adı və ya şifrə yanlışdır");
+                return View();
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(admin, loginVM.Password, loginVM.IsPersistent,false);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "İstifadəçi adı və ya şifrə yanlışdır");
+                return View();
+            }
+
+            return RedirectToAction("index","shop");
         }
     }
 }
