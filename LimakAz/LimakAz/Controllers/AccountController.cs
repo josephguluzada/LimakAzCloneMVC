@@ -73,6 +73,35 @@ namespace LimakAz.Controllers
             return RedirectToAction("index", "home");
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(MemberLoginViewModel memberLoginVM)
+        {
+            if (!ModelState.IsValid) return View();
+            AppUser member = _userManager.Users.FirstOrDefault(x => x.NormalizedEmail == memberLoginVM.Email.ToUpper());
+
+            if(member == null)
+            {
+                ModelState.AddModelError("", "Email və ya şifrə yalnışdır");
+                return View();
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(member, memberLoginVM.Password, memberLoginVM.IsPersistent, false);
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Username or password is not valid!");
+                return View();
+            }
+
+            return RedirectToAction("index", "home");
+        }
+
 
         public async Task<IActionResult> Logout()
         {

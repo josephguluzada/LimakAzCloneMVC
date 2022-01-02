@@ -1,0 +1,123 @@
+﻿@model MemberLoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+        <div class="main-container">
+            <div class="login-sec">
+                <div class="block">
+                    <!-- Block Header -->
+                    <div class="block-header">
+                        <h2 class="title page-title">HESABA DAXIL OL</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Ana səhifə</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <span>Daxil ol</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="block-body">
+                        <div class="card card-auth card-reg mb-20">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="modal-site">
+                                        <div class="login">
+                                            <div class="block">
+                                                <div class="block-body">
+                                                    <div class="card card-auth mb-20">
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="card-auth-header">
+                                                                    <img src="./assets/images/user-color.svg" alt=""
+                                                                         class="card-auth-icon">
+                                                                    <h1 class="card-auth-title upper">
+                                                                        Hesaba daxil ol
+                                                                    </h1>
+                                                                </div>
+                                                                <form method="post" class="card-auth-form">
+                                                                    <input asp-for="Email" type="email"
+                                                                           placeholder="E-mail*" required="required"
+                                                                           aria-required="true" class="form-control">
+                                                                    <div role="group" class="input-group">
+                                                                        <input asp-for="Password"
+                                                                               type="password" placeholder="Şifrə*"
+                                                                               required="required" aria-required="true"
+                                                                               class="form-control">
+                                                                        <a class="visiblity-btn-password showPass">
+                                                                            <span aria-hidden="true"
+                                                                                  class="show-password hide-eye"></span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <fieldset class="form-group">
+                                                                        <div>
+                                                                            <div class="row">
+                                                                                <div class="col-5">
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" asp-for="IsPersistent"
+                                                                                               class="custom-control-input">
+                                                                                        <label for=""
+                                                                                               class="custom-control-label">
+                                                                                            Məni
+                                                                                            xatırla
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-7">
+                                                                                    <div class="text-right">
+                                                                                        <a href="#" class="form-link">
+                                                                                            <img src="./assets/images/help.svg"
+                                                                                                 alt="">
+                                                                                            <span>
+                                                                                                Şifrəni
+                                                                                                unutmusunuz
+                                                                                            </span>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                    <div style=" font-size:13px;text-align:left" class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                                                    <div class="row mt-3">
+                                                                        <div class="col-6">
+                                                                            <div class="login-submit">
+                                                                                <button type="submit"
+                                                                                        class="btn btn-submit btn-primary">
+                                                                                    <span>Daxil ol</span>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="login-submit-reg">
+                                                                                <a asp-action="register" asp-controller="account"
+                                                                                   class="btn btn-primary btn-submit">
+                                                                                    QEYDİYYAT
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="card-auth-image text-right">
+                                                                    <img src="~/assets/images/login-image.svg" alt=""
+                                                                         class="card-img">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   

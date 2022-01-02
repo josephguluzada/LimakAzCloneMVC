@@ -99,7 +99,7 @@
                                                    class="dropdown-item"><span>Tənzimləmələr</span></a>
                                             </li>
                                             <li class="lang-dropdown">
-                                                <a href="#" class="dropdown-item">
+                                                <a asp-action="logout" asp-controller="account" class="dropdown-item">
                                                     <span>
                                                         Hesabdan
                                                         çıx
@@ -114,7 +114,7 @@
                         }
                         else
                         {
-                            <a href="login.html" class="button">Daxil ol</a>
+                            <a asp-action="login" asp-controller="account" class="button">Daxil ol</a>
 
                         }
                     </div>
