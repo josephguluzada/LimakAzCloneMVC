@@ -80,7 +80,7 @@
     <!-- Header End -->
     <!-- Main Start -->
     <main id="main"
-          style="background: url(./assets/images/limak_bg.jpg) no-repeat; background-size: 100%; background-position: top center;"
+          style="background: url(../assets/images/limak_bg.jpg) no-repeat; background-size: 100%; background-position: top center;"
           class="bg-full">
 @RenderBody()
     </main>
@@ -158,6 +158,10 @@
         </a>
     </div>
     <!-- Banner End -->
+    @RenderSection("Scripts",required:false)
+
+    
+
     <script src="~/assets/js/store.js"></script>
 </body>
 

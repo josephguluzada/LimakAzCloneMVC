@@ -1,0 +1,93 @@
+﻿@model MemberRegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+<div class="main-container">
+    <div class="register">
+        <div class="block">
+            <!-- Block Header -->
+            <div class="block-header">
+                <h2 class="title page-title">İSTİFADƏÇİ QEYDİYYATI</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a asp-action="index" asp-controller="home">Ana səhifə</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <span>QEYDİYYAT</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-body">
+                <div class="card card-auth card-reg mb-20">
+                    <div class="card-auth-header">
+                        <h1 class="card-auth-title upper">
+                            İSTİFADƏÇİ QEYDİYYATI
+                        </h1>
+                    </div>
+                    <form method="post" class="form-reg">
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <h3 class="form-title">
+                                    Profil məlumatları
+                                </h3>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input asp-for="FullName" type="text" placeholder="Ad və soyad" required="required"
+                                               autocomplete="none" aria-required="true" class="form-control">
+                                        <span style="font-size:13px" class="text-danger" asp-validation-for="FullName"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <input asp-for="UserName" type="text" placeholder="İstifadəçi adı" required="required"
+                                               autocomplete="none" aria-required="true" class="form-control">
+                                        <span style="font-size:13px" class="text-danger" asp-validation-for="UserName"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <input asp-for="Email" placeholder="Email" required="required"
+                                               autocomplete="none" aria-required="true" class="form-control">
+                                        <span style="font-size:13px" class="text-danger" asp-validation-for="Email"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <input asp-for="PhoneNumber" placeholder="Telefon" required="required"
+                                               autocomplete="none" aria-required="true" class="form-control">
+                                        <span style="font-size:13px" class="text-danger" asp-validation-for="PhoneNumber"></span>
+                                    </div>
+                                    <div class="pass col-md-6 col-12">
+                                        <input asp-for="Password" placeholder="Şifrə"
+                                               required="required" autocomplete="new-password" aria-required="true"
+                                               class="form-control">
+                                        <a class="visiblity-btn showPass">
+                                            <span aria-hidden="true" class="show_p hide-eye"></span>
+                                        </a>
+                                    </div>
+                                    <div class="pass col-md-6 col-12">
+                                        <input asp-for="ConfirmPassword"
+                                               placeholder="Şifrənin təkrarı" required="required"
+                                               autocomplete="new-password" aria-required="true"
+                                               class="form-control">
+                                        <a class="visiblity-btn showPass">
+                                            <span aria-hidden="true" class="show_p hide-eye"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                        <div class="form-reg-footer">
+                            <button type="submit" class="btn btn-submit form-reg-btn btn-primary">
+                                <span>QEYDİYYAT</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/assets/js/register.js"></script>
+}
+<!-- Main End -->
