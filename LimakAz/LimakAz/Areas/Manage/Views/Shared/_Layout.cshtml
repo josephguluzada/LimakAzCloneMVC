@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<AppUser> usermanager
+
+@{ 
+    AppUser admin = null;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        admin = await usermanager.FindByNameAsync(User.Identity.Name);
+    }
+}
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -30,14 +44,14 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item nav-profile border-bottom">
-                    <a href="#" class="nav-link flex-column">
+                    <a asp-action="index" asp-controller="dashboard" class="nav-link flex-column">
                         <div class="nav-profile-image">
-                            <img src="~/manage/images/faces/face1.jpg" alt="profile" />
+                            <img src="~/manage/images/faces/face9.jpg" alt="profile" />
                             <!--change to offline or busy as needed-->
                         </div>
                         <div class="nav-profile-text d-flex ml-0 mb-3 flex-column">
-                            <span class="font-weight-semibold mb-1 mt-2 text-center">Antonio Olson</span>
-                            <span class="text-secondary icon-sm text-center">$3499.00</span>
+                            <span class="font-weight-semibold mb-1 mt-2 text-center">@admin.FullName</span>
+                            <span class="text-secondary icon-sm text-center">@admin.UserName</span>
                         </div>
                     </a>
                 </li>

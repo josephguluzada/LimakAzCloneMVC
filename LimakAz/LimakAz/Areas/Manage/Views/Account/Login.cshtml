@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-    <title>Login V1</title>
+    <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -29,7 +29,7 @@
     <!--===============================================================================================-->
 </head>
 
-<body style="overflow-y:hidden;">
+<body>
 
     <div class="limiter">
         <div class="container-login100">
@@ -60,7 +60,7 @@
                         </span>
                         <span class="text-danger" asp-validation-for="Password"></span>
                     </div>
-                    <div  style="display:flex;align-items:center;">
+                    <div style="display:flex;align-items:center;">
                         <input class="input100" type="checkbox" asp-for="IsPersistent" placeholder="IsPersistant" style="display:inline-block;width:max-content;margin-right:5px;">
                         <label style="display:inline-block;width:max-content;margin-bottom:0">Remember me</label>
                     </div>
@@ -104,13 +104,16 @@
     <!--===============================================================================================-->
     <script src="~/login/vendor/tilt/tilt.jquery.min.js"></script>
     <script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
     </script>
     <!--===============================================================================================-->
     <script src="~/login/js/main.js"></script>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" integrity="sha512-o6XqxgrUsKmchwy9G5VRNWSSxTS4Urr4loO6/0hYdpWmFUfHqGzawGxeQGMDqYzxjY9sbktPbNlkIQJWagVZQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
