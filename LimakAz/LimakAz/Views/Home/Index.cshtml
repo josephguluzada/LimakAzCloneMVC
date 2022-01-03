@@ -1,102 +1,112 @@
 ﻿@model HomeViewModel
 
-@{ 
+@{
     Layout = "_Layout2";
 }
 
-<section id="hero" style="background-image: url(./assets/images/background-img.jpg);">
-    <div class="container-hero">
-        <div class="row">
-            <div class="col-md-7 col-12">
-                <div class="card order-card">
-                    <div class="order-card-content">
-                        <h1 class="title order-card-title">
-                            "LİMAK"
-                            <span class="badge badge-secondary">SÜRƏTLİ</span>
-                            POÇTDAŞIMA <br> VƏ <br>
-                            KURYER ŞİRKƏTİDİR
-                        </h1>
-                        <form action="">
-                            <div class="order-input">
-                                <div class="input-group">
-                                    <input type="text" class="form-control"
-                                           placeholder="Məhsul linkini əlavə edin">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <img src="~/assets/images/link.svg" alt="">
+@if (!User.Identity.IsAuthenticated)
+{
+    <section id="hero" style="background-image: url(./assets/images/background-img.jpg);">
+        <div class="container-hero">
+            <div class="row">
+                <div class="col-md-7 col-12">
+                    <div class="card order-card">
+                        <div class="order-card-content">
+                            <h1 class="title order-card-title">
+                                "LİMAK"
+                                <span class="badge badge-secondary">SÜRƏTLİ</span>
+                                POÇTDAŞIMA <br> VƏ <br>
+                                KURYER ŞİRKƏTİDİR
+                            </h1>
+                            <form action="">
+                                <div class="order-input">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control"
+                                               placeholder="Məhsul linkini əlavə edin">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <img src="~/assets/images/link.svg" alt="">
+                                            </div>
                                         </div>
                                     </div>
+                                    <button type="button" class="btn btn-outline-success btn-plus">
+                                        <img src="~/assets/images/plus.svg" alt="">
+                                    </button>
                                 </div>
-                                <button type="button" class="btn btn-outline-success btn-plus">
-                                    <img src="~/assets/images/plus.svg" alt="">
-                                </button>
-                            </div>
-                            @if (!User.Identity.IsAuthenticated)
-                            {
-                                <a asp-action="login" asp-controller="account" style="line-height: 40px;" class="btn btn-success btn-order">Sifariş et</a>
-                            }
-                            else
-                            {
-                                <button type="button" class="btn btn-success btn-order">Sifariş et</button>
-                            }
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 col-12">
-                <div class="card register-card">
-                    <div class="register-card-header">
-                        <h2 class="register-card-title">QEYDİYYAT</h2>
-                        <img src="~/assets/images/mascot.svg" alt="">
-                    </div>
-                    <div class="register-card-main">
-                        <div class="register-card-padding">
-                            <form class="register-card-form">
-                                <div class="register-card-form-input">
-                                    <input type="text" id="name" placeholder="Ad" class="form-control">
-                                    <input type="text" id="surname" placeholder="Soyad" class="form-control">
-                                </div>
-                                <div class="register-card-form-input">
-                                    <input type="text" id="email" placeholder="Email" class="form-control">
-                                    <input type="number" id="number" placeholder="Telefon" class="form-control">
-                                </div>
-                                <div class="register-card-form-input">
-                                    <div class="group mr">
-                                        <input type="password" id="password" placeholder="Şifrə"
-                                               class="form-control">
-                                        <a class="visibility-btn showPass">
-                                            <span class="show"></span>
-                                        </a>
-                                    </div>
-                                    <div class="group">
-                                        <input type="password" id="password" placeholder="Şifrənin təkrarı"
-                                               class="form-control last-input">
-                                        <a class="visibility-btn showPass">
-                                            <span class="show"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <select id="deliveryOffice" class="custom-select">
-                                    <option>Çatdırılma ofisi</option>
-                                    <option value="1">Bakı - İçərişəhər</option>
-                                    <option value="1">Bakı - Xalqlar Dostluğu</option>
-                                    <option value="1">Xırdalan</option>
-                                    <option value="1">Sumqayıt</option>
-                                    <option value="1">Gəncə</option>
-                                    <option value="1">Zaqatala</option>
-                                </select>
-                                <button type="button">
-                                    <span>QEYDİYYAT</span>
-                                    <img src="~/assets/images/arrow-right.svg" alt="">
-                                </button>
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <a asp-action="login" asp-controller="account" style="line-height: 40px;" class="btn btn-success btn-order">Sifariş et</a>
+                                }
+                                else
+                                {
+                                    <button type="button" class="btn btn-success btn-order">Sifariş et</button>
+                                }
                             </form>
                         </div>
                     </div>
                 </div>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <div class="col-md-5 col-12">
+                        <div class="card register-card">
+                            <div class="register-card-header">
+                                <h2 class="register-card-title">QEYDİYYAT</h2>
+                                <img src="~/assets/images/mascot.svg" alt="">
+                            </div>
+                            <div class="register-card-main">
+                                <div class="register-card-padding">
+                                    <form class="register-card-form">
+                                        <div class="register-card-form-input">
+                                            <input type="text" id="name" placeholder="Ad" class="form-control">
+                                            <input type="text" id="surname" placeholder="Soyad" class="form-control">
+                                        </div>
+                                        <div class="register-card-form-input">
+                                            <input type="text" id="email" placeholder="Email" class="form-control">
+                                            <input type="number" id="number" placeholder="Telefon" class="form-control">
+                                        </div>
+                                        <div class="register-card-form-input">
+                                            <div class="group mr">
+                                                <input type="password" id="password" placeholder="Şifrə"
+                                                       class="form-control">
+                                                <a class="visibility-btn showPass">
+                                                    <span class="show"></span>
+                                                </a>
+                                            </div>
+                                            <div class="group">
+                                                <input type="password" id="password" placeholder="Şifrənin təkrarı"
+                                                       class="form-control last-input">
+                                                <a class="visibility-btn showPass">
+                                                    <span class="show"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <select id="deliveryOffice" class="custom-select">
+                                            <option>Çatdırılma ofisi</option>
+                                            <option value="1">Bakı - İçərişəhər</option>
+                                            <option value="1">Bakı - Xalqlar Dostluğu</option>
+                                            <option value="1">Xırdalan</option>
+                                            <option value="1">Sumqayıt</option>
+                                            <option value="1">Gəncə</option>
+                                            <option value="1">Zaqatala</option>
+                                        </select>
+                                        <button type="button">
+                                            <span>QEYDİYYAT</span>
+                                            <img src="~/assets/images/arrow-right.svg" alt="">
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
             </div>
         </div>
-    </div>
-</section>
+
+
+    </section>
+
+}
 <div class="main-container">
     <div class="home">
         <!-- Shops -->

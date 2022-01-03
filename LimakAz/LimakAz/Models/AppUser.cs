@@ -10,5 +10,13 @@ namespace LimakAz.Models
     {
         public string FullName { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime BirthDay { get; set; }
+        public double Balance { get; set; }
+        public List<Order> Orders { get; set; }
+
+        public int WareHouseId { get; set; }
+        public WareHouse WareHouse { get; set; }
+
     }
 }

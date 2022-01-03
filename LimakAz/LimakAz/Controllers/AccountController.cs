@@ -70,7 +70,7 @@ namespace LimakAz.Controllers
             await _userManager.AddToRoleAsync(member, "Member");
             await _signInManager.SignInAsync(member, true);
 
-            return RedirectToAction("index", "home");
+            return RedirectToAction("index", "userpanel");
         }
 
         public IActionResult Login()
@@ -99,7 +99,7 @@ namespace LimakAz.Controllers
                 return View();
             }
 
-            return RedirectToAction("index", "home");
+            return RedirectToAction("index", "userpanel");
         }
 
 
