@@ -1,0 +1,325 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> usermanager
+
+@{ 
+    AppUser member = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        member = await usermanager.FindByNameAsync(User.Identity.Name);
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="https://limak.az/favicon.ico">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <title>Limak.az</title>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="fixed-top">
+        <div class="user-panel-account">
+            <div class="container-user-panel">
+                <div class="dropdown b-dropdown lang btn-group">
+                    <button type="button" class="btn dropdown-toggle btn-primary user-panel-btn">
+                        <span style="font-weight: 600;" id="userPanelBtn">@member.FullName</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" id="userPanelList">
+                        <li class="lang-dropdown">
+                            <a href="user-panel.html" class="dropdown-item">
+                                <span>
+                                    İstifadəçi
+                                    paneli
+                                </span>
+                            </a>
+                        </li>
+                        <li class="lang-dropdown">
+                            <a href="#" class="dropdown-item"><span>Sifarişlər</span></a>
+                        </li>
+                        <li class="lang-dropdown">
+                            <a href="report.html" class="dropdown-item">
+                                <span>
+                                    Bəyan
+                                    Gözləyən
+                                </span>
+                            </a>
+                        </li>
+                        <li class="lang-dropdown">
+                            <a href="package.html"
+                               class="dropdown-item"><span>Bağlamalar</span></a>
+                        </li>
+                        <li class="lang-dropdown">
+                            <a href="adress.html" class="dropdown-item">
+                                <span>
+                                    Xaricdəki
+                                    Ünvanlar
+                                </span>
+                            </a>
+                        </li>
+                        <li class="lang-dropdown">
+                            <a href="courier.html" class="dropdown-item"><span>Kuryer</span></a>
+                        </li>
+                        <li class="lang-dropdown">
+                            <a href="up-setting.html"
+                               class="dropdown-item"><span>Tənzimləmələr</span></a>
+                        </li>
+                        <li class="lang-dropdown">
+                            <a asp-action="logout" asp-controller="account" class="dropdown-item"><span>Hesabdan çıx</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar" id="userPanel-nav">
+            <div class="container-nav">
+                <div class="navbar-wrapper row">
+                    <div class="navbar-logo col-md-2">
+                        <a href="index.html" class="logo">
+                            <img src="~/assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <ul class="nav-list col-md-5" style="justify-content: flex-start;">
+                        <li class="nav-list-item"><a href="tariffs.html">Tariflər</a></li>
+                        <li class="nav-list-item"><a href="calculator.html">Kalkulyator</a></li>
+                        <li class="nav-list-item"><a href="shop.html">Mağazalar</a></li>
+                        <li class="nav-list-item"><a href="contact.html">Əlaqə</a></li>
+                        <li class="nav-list-item"><a href="question.html">FAQ</a></li>
+                    </ul>
+                    <div class="navbar-right-col col-md-5" style="padding-left: 0;">
+
+                        <a href="#" class="navbar-contact-phone">
+                            <img src="~/assets/images/hot-line-panel.svg" alt="">
+                        </a>
+                        <button type="button" class="btn btn-header-danger">SİFARİŞ ET</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <main id="main"
+          style="background: url(./assets/images/limak_bg.jpg) no-repeat; background-size: 100%; background-position: top center;"
+          class="bg-full">
+        <div class="main-container" style="max-width: 114rem;">
+            <section id="user-panel">
+                <div class="block">
+                    <div class="block-header">
+                        <h2 class="block-title" style="font-size: 17px;text-transform: uppercase;">
+                            İstifadəçi Paneli
+                        </h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Ana səhifə</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <span>İstifadəçi Paneli</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Aside -->
+                    <div class="col-md-4 col-lg-3 col-12">
+                        <aside class="aside">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="list-group user-nav ">
+                                        <div class="list-group-item mt-0">
+                                            <i class="far fa-user"></i>
+                                            <h3 class="user-nav-title upper">
+                                                @member.FullName
+                                            </h3>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <i class="far fa-user-circle"></i>
+                                            <h3 class="user-nav-title">
+                                                <span>İstifadəçi adı:</span>
+                                                <strong>@member.UserName</strong>
+                                            </h3>
+                                        </div>
+                                        <div class="list-group-item user-nav-notf">
+                                            <a href="notification.html">
+                                                <i class="fas fa-bell"></i>
+                                                <h3 class="user-nav-title">
+                                                    Bildirişlər
+                                                </h3>
+                                            </a>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <i class="fas fa-info-circle"></i>
+                                            <div class="user-nav-group">
+                                                <h4 class="user-nav-group-title">
+                                                    Cari ay
+                                                </h4>
+                                                <div class="user-nav-group-label">
+                                                    0.00
+                                                    <span class="manat">$</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <div class="progress">
+                                            <div class="progress-bar custom-progress-small">
+                                                <span>0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group aside-nav-top">
+                                        <div class="list-group-item aside-nav mt-0">
+                                            <a href="user-panel.html">
+                                                <i class="fas fa-shopping-bag"></i>
+                                                <h3 class="aside-nav-title">Sifarişlər</h3>
+                                            </a>
+                                        </div>
+                                        <div class="list-group-item aside-nav">
+                                            <a href="report.html">
+                                                <i class="far fa-file-alt"></i>
+                                                <h3 class="aside-nav-title">Bəyan Gözləyən</h3>
+                                            </a>
+                                        </div>
+                                        <div class="list-group-item aside-nav">
+                                            <a href="package.html">
+                                                <i class="fas fa-box-open"></i>
+                                                <h3 class="aside-nav-title">Bağlamalar</h3>
+                                            </a>
+                                        </div>
+                                        <div class="list-group-item aside-nav">
+                                            <a href="adress.html">
+                                                <i class="fas fa-thumbtack"></i>
+                                                <h3 class="aside-nav-title">Xaricdəki ünvanlar</h3>
+                                            </a>
+                                        </div>
+                                        <div class="list-group-item aside-nav">
+                                            <a href="courier.html">
+                                                <i class="fas fa-user-tag"></i>
+                                                <h3 class="aside-nav-title">Kuryer</h3>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group aside-account">
+                                        <div class="list-group-item mt-0 aside-nav">
+                                            <a href="balance.html">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <h3 class="aside-account-title">
+                                                    Balansınız
+                                                </h3>
+                                            </a>
+                                        </div>
+                                        <div class="list-group-item aside-nav">
+                                            <a href="up-setting.html">
+                                                <i class="fas fa-user-cog"></i>
+                                                <h3 class="aside-account-title">
+                                                    Tənzimləmələr
+                                                </h3>
+                                            </a>
+                                        </div>
+                                        <div class="list-group-item aside-nav">
+                                            <a asp-action="logout" asp-controller="account">
+                                                <i class="fas fa-power-off"></i>
+                                                <h3 class="aside-account-title">
+                                                    Hesabdan çıx
+                                                </h3>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <!-- Content -->
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <footer style="margin-top: 0;">
+        <div class="container-footer">
+            <div class="footer-main row">
+                <div class="footer-left col-md-4">
+                    <a href="index.html" class="footer-logo">
+                        <img src="~/assets/images/logo-white.svg" alt="">
+                    </a>
+                    <div class="footer-app">
+                        <a href="#">
+                            <img src="~/assets/images/app-store.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="~/assets/images/google-play.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-navigation-menu col-md-4">
+                    <ul class="footer-nav-list">
+                        <li><a href="tariffs.html">Tariflər</a></li>
+                        <li><a href="calculator.html">Kalkulyator</a></li>
+                        <li><a href="shop.html">Mağazalar</a></li>
+                    </ul>
+                    <ul class="footer-nav-list">
+                        <li><a href="terms.html">Qaydalar</a></li>
+                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="question.html">FAQ</a></li>
+                    </ul>
+                    <ul class="footer-nav-list">
+                        <li><a href="privacy.html">Gizlilik şərtləri</a></li>
+                        <li><a href="contact.html">Əlaqə</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact col-md-4">
+                    <a href="#" class="hot-line">
+                        <img src="~/assets/images/hot-line.svg" alt="">
+                    </a>
+                    <div class="footer-social">
+                        <a href="#"><img src="~/assets/images/facebook.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/instagram.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/telegram.png" alt="" class="resized-icon"></a>
+                        <a href="#"><img src="~/assets/images/twitter.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/youtube.svg" alt=""></a>
+                        <a href="#"><img src="~/assets/images/tik-tok.png" alt="" class="resized-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    © 2018 - 2021 Limak.az | Bütün hüquqlar qorunur
+                </div>
+                <div class="footer-payment">
+                    <img src="~/assets/images/visa.svg" alt="">
+                    <img src="~/assets/images/mastercard.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Banner Start -->
+    <div class="banner customized-banner">
+        <a href="#" class="left-banner">
+            <div style="position: relative;">
+                <img src="~/assets/images/left-banner.png" alt="">
+            </div>
+        </a>
+        <a href="#" class="right-banner">
+            <div style="position: relative;">
+                <img src="~/assets/images/right-banner.png" alt="">
+            </div>
+        </a>
+    </div>
+    <!-- Banner End -->
+    <script src="https://kit.fontawesome.com/3d33933aa8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <script src="~/assets/js/main.js"></script>
+</body>
+
+</html>

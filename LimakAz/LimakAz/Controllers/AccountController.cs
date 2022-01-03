@@ -95,7 +95,7 @@ namespace LimakAz.Controllers
 
             if (!result.Succeeded)
             {
-                ModelState.AddModelError("", "Username or password is not valid!");
+                ModelState.AddModelError("", "Email və ya şifrə yalnışdır");
                 return View();
             }
 

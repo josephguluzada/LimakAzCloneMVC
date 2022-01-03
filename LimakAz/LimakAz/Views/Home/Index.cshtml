@@ -31,7 +31,14 @@
                                     <img src="~/assets/images/plus.svg" alt="">
                                 </button>
                             </div>
-                            <button type="button" class="btn btn-success btn-order">Sifariş et</button>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a asp-action="login" asp-controller="account" style="line-height: 40px;" class="btn btn-success btn-order">Sifariş et</a>
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-success btn-order">Sifariş et</button>
+                            }
                         </form>
                     </div>
                 </div>

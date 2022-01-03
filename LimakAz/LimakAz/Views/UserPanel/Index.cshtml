@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="col-sm-12 col-md-8 col-lg-9">
+    <div>
+        <div class="content">
+            <div class="content-header" style="margin-bottom: 2rem;">
+                <button class="btn btn-submit btn-primary btn-sm">
+                    <span>
+                        Yenilə
+                        <i class="fas fa-sync"></i>
+                    </span>
+                </button>
+                <form action="" class="form-package">
+                    <select name="" id="" class="custom-select">
+                        <option value="-1">Hamısı</option>
+                        <option value="1">Gözləmədə</option>
+                        <option value="2">Icrada</option>
+                        <option value="3">Problemli</option>
+                    </select>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div>
+                        <ul id="headerList" class="nav nav nav-tabs card-tabs-nav">
+                            <li class="nav-item">
+                                <a data-target="1" href="#" class="nav-link active">
+                                    <img src="~/assets/images/tr-circle.svg" alt=""
+                                         class="card-tabs-nav-icon">
+                                    <span class="card-tabs-nav-title">
+                                        Türkiyə
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item card-tabs">
+                                <a data-target="2" href="#" class="nav-link">
+                                    <img src="~/assets/images/usa-circle.svg" alt=""
+                                         class="card-tabs-nav-icon">
+                                    <span class="card-tabs-nav-title">Amerika</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-id="1"
+                         class="order-list tab-content card-tabs-body active active-tab">
+                        <div>
+                            <div class="card order-item">
+                                <div class="order-item-title">
+                                    <h3>Sifariş tapılmadı</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-id="2" class="order-list tab-content card-tabs-body active-tab">
+                        <div>
+                            <div class="card order-item">
+                                <div class="order-item-title">
+                                    <h3>Sifariş tapılmadı</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
