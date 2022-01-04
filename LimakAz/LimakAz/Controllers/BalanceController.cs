@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 namespace LimakAz.Controllers
 {
     [Authorize(Roles ="Member")]
-    public class UserPanelController : Controller
+    public class BalanceController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-
-
     }
 }

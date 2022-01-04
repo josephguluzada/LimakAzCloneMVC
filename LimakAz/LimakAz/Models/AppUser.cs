@@ -13,6 +13,8 @@ namespace LimakAz.Models
         public bool IsActive { get; set; }
         public DateTime BirthDay { get; set; }
         public double Balance { get; set; }
+        public double Bonus { get; set; }
+        public double WaitedBonus { get; set; }
         public List<Order> Orders { get; set; }
 
         public int WareHouseId { get; set; }
