@@ -8,7 +8,7 @@
     <div class="container-hero">
         <div class="row">
             <div class="col-md-12 col-12">
-                <div class="card order-card" style="width: 820px;">
+                <div class="card order-card" style="width: 820px; height: 53.3rem;">
                     <div class="order-card-content" style="width:100%">
                         <h1 class="title order-card-title">
                             "LİMAK"
@@ -20,18 +20,34 @@
                             <div class="order-input">
                                 <div class="input-group">
                                     <input type="text" class="form-control"
-                                           placeholder="Məhsul linkini əlavə edin">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <img src="./assets/images/link.svg" alt="">
+                                           placeholder="Məhsul linkini əlavə edin" style="background-color: white; border-color: #efefef">
+                                    <div class="input-group-append" >
+                                        <div class="input-group-text" style="border-color: #efefef">
+                                            <img src="~/assets/images/link.svg" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-outline-success btn-plus">
-                                    <img src="./assets/images/plus.svg" alt="">
-                                </button>
                             </div>
-                            <button type="button" class="btn btn-success btn-order">Sifariş et</button>
+                            <div class="order-input d-block" >
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="Mağaza adı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="Sayı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="Məbləğ" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-order">Sifariş et</button>
                         </form>
                     </div>
                 </div>
