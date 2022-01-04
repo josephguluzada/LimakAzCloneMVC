@@ -126,7 +126,8 @@ namespace LimakAz.Controllers
                 UserName = member.UserName,
                 Email = member.Email,
                 PhoneNumber = member.PhoneNumber,
-                BirthDay = member.BirthDay
+                BirthDay = member.BirthDay,
+                WareHouseId = member.WareHouseId
             };
 
             return View(profileVM);
@@ -168,7 +169,7 @@ namespace LimakAz.Controllers
             member.UserName = profileVM.UserName;
             member.PhoneNumber = profileVM.PhoneNumber;
             member.BirthDay = profileVM.BirthDay;
-            member.WareHouseId = profileVM.WareHouse.Id;
+            member.WareHouseId = profileVM.WareHouseId;
 
             var result = await _userManager.UpdateAsync(member);
 

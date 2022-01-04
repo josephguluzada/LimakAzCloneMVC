@@ -36,6 +36,6 @@ namespace LimakAz.ViewModels
         public string CurrentPassword { get; set; }
         public DateTime BirthDay { get; set; }
 
-        public WareHouse WareHouse { get; set; }
+        public int WareHouseId { get; set; }
     }
 }

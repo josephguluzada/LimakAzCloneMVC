@@ -44,7 +44,7 @@
                                                                 <span class="text-danger" asp-validation-for="UserName"></span>
                                                             </div>
                                                             <div class="col-6">
-                                                                <select class="custom-select" asp-for="WareHouse.Id" asp-items="@(new SelectList(ViewBag.WareHouses,"Id","Name"))"></select>
+                                                                <select class="custom-select" asp-for="WareHouseId" asp-items="@(new SelectList(ViewBag.WareHouses,"Id","Name"))"></select>
                                                             </div>
                                                             <div class="col-6">
                                                                 <input type="text" asp-for="BirthDay" placeholder="Doğum tarixi"
