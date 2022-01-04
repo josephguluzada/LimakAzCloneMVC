@@ -117,6 +117,8 @@ namespace LimakAz.Controllers
         public async Task<IActionResult> Profile()
         {
             AppUser member = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (member == null) return RedirectToAction("index", "error");
+
 
             ViewBag.WareHouses = _context.WareHouses.ToList();
 
@@ -143,6 +145,7 @@ namespace LimakAz.Controllers
             if (!ModelState.IsValid) return View();
 
             AppUser member = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (member == null) return RedirectToAction("index", "error");
 
             if (!string.IsNullOrWhiteSpace(profileVM.ConfirmNewPassword) && !string.IsNullOrWhiteSpace(profileVM.NewPassword))
             {
@@ -166,7 +169,6 @@ namespace LimakAz.Controllers
             }
 
             member.FullName = profileVM.FullName;
-            member.UserName = profileVM.UserName;
             member.PhoneNumber = profileVM.PhoneNumber;
             member.BirthDay = profileVM.BirthDay;
             member.WareHouseId = profileVM.WareHouseId;
