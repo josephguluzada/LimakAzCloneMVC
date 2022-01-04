@@ -85,11 +85,11 @@
                         </a>
                     </div>
                     <ul class="nav-list col-md-5" style="justify-content: flex-start;">
-                        <li class="nav-list-item"><a href="tariffs.html">Tariflər</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="tariff">Tariflər</a></li>
                         <li class="nav-list-item"><a href="calculator.html">Kalkulyator</a></li>
-                        <li class="nav-list-item"><a href="shop.html">Mağazalar</a></li>
-                        <li class="nav-list-item"><a href="contact.html">Əlaqə</a></li>
-                        <li class="nav-list-item"><a href="question.html">FAQ</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="contact">Əlaqə</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="faq">FAQ</a></li>
                     </ul>
                     <div class="navbar-right-col col-md-5" style="padding-left: 0;">
 
@@ -247,7 +247,7 @@
         <div class="container-footer">
             <div class="footer-main row">
                 <div class="footer-left col-md-4">
-                    <a href="index.html" class="footer-logo">
+                    <a asp-action="index" asp-controller="userpanel" class="footer-logo">
                         <img src="~/assets/images/logo-white.svg" alt="">
                     </a>
                     <div class="footer-app">
@@ -261,18 +261,18 @@
                 </div>
                 <div class="footer-navigation-menu col-md-4">
                     <ul class="footer-nav-list">
-                        <li><a href="tariffs.html">Tariflər</a></li>
+                        <li><a asp-action="index" asp-controller="tariff">Tariflər</a></li>
                         <li><a href="calculator.html">Kalkulyator</a></li>
-                        <li><a href="shop.html">Mağazalar</a></li>
+                        <li><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
                     </ul>
                     <ul class="footer-nav-list">
-                        <li><a href="terms.html">Qaydalar</a></li>
-                        <li><a href="about.html">Haqqımızda</a></li>
-                        <li><a href="question.html">FAQ</a></li>
+                        <li><a asp-action="index" asp-controller="term">Qaydalar</a></li>
+                        <li><a asp-action="index" asp-controller="about">Haqqımızda</a></li>
+                        <li><a asp-action="index" asp-controller="faq">FAQ</a></li>
                     </ul>
                     <ul class="footer-nav-list">
-                        <li><a href="privacy.html">Gizlilik şərtləri</a></li>
-                        <li><a href="contact.html">Əlaqə</a></li>
+                        <li><a asp-action="index" asp-controller="privacy">Gizlilik şərtləri</a></li>
+                        <li><a asp-action="index" asp-controller="contact">Əlaqə</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact col-md-4">
