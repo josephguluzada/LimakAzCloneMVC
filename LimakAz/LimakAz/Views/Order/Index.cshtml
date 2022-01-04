@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<section id="hero" style="width:auto;display:block;padding:0" class="col-md-7">
+    <div class="container-hero">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <div class="card order-card" style="width: 820px;">
+                    <div class="order-card-content" style="width:100%">
+                        <h1 class="title order-card-title">
+                            "LİMAK"
+                            <span class="badge badge-secondary">SÜRƏTLİ</span>
+                            POÇTDAŞIMA  VƏ 
+                            KURYER ŞİRKƏTİDİR
+                        </h1>
+                        <form asp-action="orderItem" asp-controller="order" method="post">
+                            <div class="order-input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control"
+                                           placeholder="Məhsul linkini əlavə edin">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <img src="./assets/images/link.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success btn-plus">
+                                    <img src="./assets/images/plus.svg" alt="">
+                                </button>
+                            </div>
+                            <button type="button" class="btn btn-success btn-order">Sifariş et</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
