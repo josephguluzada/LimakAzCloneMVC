@@ -32,7 +32,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right" id="userPanelList">
                         <li class="lang-dropdown">
-                            <a href="user-panel.html" class="dropdown-item">
+                            <a asp-action="index" asp-controller="userpanel" class="dropdown-item">
                                 <span>
                                     İstifadəçi
                                     paneli
@@ -66,7 +66,7 @@
                             <a href="courier.html" class="dropdown-item"><span>Kuryer</span></a>
                         </li>
                         <li class="lang-dropdown">
-                            <a href="up-setting.html"
+                            <a asp-action="profile" asp-controller="account"
                                class="dropdown-item"><span>Tənzimləmələr</span></a>
                         </li>
                         <li class="lang-dropdown">
@@ -105,7 +105,7 @@
     <!-- Header End -->
     <!-- Main Start -->
     <main id="main"
-          style="background: url(./assets/images/limak_bg.jpg) no-repeat; background-size: 100%; background-position: top center;"
+          style="background: url(../assets/images/limak_bg.jpg) no-repeat; background-size: 100%; background-position: top center;"
           class="bg-full">
         <div class="main-container" style="max-width: 114rem;">
             <section id="user-panel">
@@ -215,7 +215,7 @@
                                             </a>
                                         </div>
                                         <div class="list-group-item aside-nav">
-                                            <a href="up-setting.html">
+                                            <a asp-action="profile" asp-controller="account">
                                                 <i class="fas fa-user-cog"></i>
                                                 <h3 class="aside-account-title">
                                                     Tənzimləmələr
