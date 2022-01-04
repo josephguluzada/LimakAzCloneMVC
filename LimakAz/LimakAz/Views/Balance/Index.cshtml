@@ -1,4 +1,4 @@
-﻿
+﻿@model BalanceViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -19,7 +19,7 @@
                                             <h3 class="balance-card-title">Balansım</h3>
                                             <div class="balance-card-total-price">
                                                 <span>
-                                                    0.16 <sup class="manat">₼</sup>
+                                                    @Model.Member.Balance <sup class="manat">₼</sup>
                                                 </span>
                                             </div>
                                         </div>
@@ -49,7 +49,7 @@
                                             <h3 class="balance-card-title">Bonuslarım</h3>
                                             <div class="balance-card-total-price">
                                                 <span>
-                                                    0.00
+                                                    @Model.Member.Bonus
                                                 </span>
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@
                                             <h3 class="balance-card-title">Gözləmədə</h3>
                                             <div class="balance-card-total-price">
                                                 <span>
-                                                    0.00
+                                                    @Model.Member.WaitedBonus
                                                 </span>
                                             </div>
                                         </div>
@@ -83,14 +83,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="balance-payment-form">
-                                <form action="">
+                                <form asp-action="IncreaseBalance" asp-controller="balance">
                                     <div class="row">
                                         <div class="col-12">
-                                            <input id="amountAZN" name="amount"
-                                                   type="number" placeholder="AZN" required="required"
-                                                   readonly="readonly" aria-required="true"
+                                            <input autocomplete="off" asp-for="@Model.Money"
+                                                    placeholder="AZN" 
                                                    class="form-control"
-                                                   style="background-color: white;">
+                                                   style="background-color: white; box-shadow:none;outline:none" onFocus="value=''" >
                                         </div>
                                     </div>
                                     <button type="submit"
