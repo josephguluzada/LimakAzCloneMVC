@@ -31,7 +31,7 @@
                                         <div class="card order-item order-item-settings">
                                             <div class="card-body">
                                                 <div class="card-step">
-                                                    <form method="post" class="form-settings">
+                                                    <form asp-controller="account" asp-action="profile" method="post" class="form-settings">
                                                         <div class="row">
                                                             <div class="col-6">
                                                                 <input type="text" asp-for="FullName" placeholder="Ad"
@@ -80,14 +80,14 @@
                                     <div class="tab-pane active-tab" data-id="2">
                                         <div class="card order-item order-item-safety">
                                             <div class="card-body custom-padding">
-                                                <form action="" class="form-safety">
+                                                <form asp-controller="account" asp-action="changepassword" method="post" class="form-safety">
                                                     <div class="row">
                                                         <div class="col-lg-6 col-12">
                                                             <div class="card-step">
                                                                 <h3 class="step-title upper">CARİ ŞİFRƏ</h3>
                                                                 <div role="group" class="input-group search">
-                                                                    <input id="currentPass" type="password"
-                                                                           placeholder="Şifrə" required="required"
+                                                                    <input id="CurrentPassword" asp-for="CurrentPassword"
+                                                                           placeholder="Cari şifrə" required="required"
                                                                            aria-required="true" class="form-control">
                                                                     <div class="input-group-append">
                                                                         <button type="button" class="btn btn-info"
@@ -99,15 +99,18 @@
                                                             </div>
                                                             <div class="card-step custom-card-step">
                                                                 <h3 class="step-title upper">YENİ ŞİFRƏ</h3>
-                                                                <input id="newPass" type="password" placeholder="Şifrə"
+                                                                <input id="NewPassword" asp-for="NewPassword" placeholder="Yeni şifrə"
                                                                        required="required" aria-required="true"
                                                                        class="form-control" aria-autocomplete="list">
-                                                                <input id="newPassRepeat" type="password"
-                                                                       placeholder="Təkrar şifrə" required="required"
+                                                                <input id="ConfirmNewPassword" asp-for="ConfirmNewPassword"
+                                                                       placeholder="Yeni şifrənin təkrarı" required="required"
                                                                        aria-required="true" class="form-control">
                                                             </div>
-                                                            <button type="button" disabled="disabled"
-                                                                    class="btn btn-submit btn-primary disabled">
+                                                            <div class="col-md-12">
+                                                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                                            </div>
+                                                            <button type="submit"
+                                                                    class="btn btn-submit btn-primary">
                                                                 <span>
                                                                     Yadda saxla
                                                                 </span>
@@ -116,7 +119,7 @@
                                                         <div class="col-lg-6 col-12">
                                                             <div class="form-password-info h100">
                                                                 <div class="text-center">
-                                                                    <img src="./assets/images/safety.svg" alt="">
+                                                                    <img src="~/assets/images/safety.svg" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>

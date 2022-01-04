@@ -186,5 +186,47 @@ namespace LimakAz.Controllers
             return RedirectToAction("profile", "account");
 
         }
+
+        [Authorize(Roles ="Member")]
+        public async Task<IActionResult> ChangePassword()
+        {
+            ViewBag.WareHouses = _context.WareHouses.ToList();
+
+            AppUser member = await _userManager.FindByNameAsync(User.Identity.Name);
+            ProfileViewModel profileViewModel = new ProfileViewModel();
+
+            return View(profileViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Member")]
+        public async Task<IActionResult> ChangePassword(ProfileViewModel profileVM)
+        {
+            ViewBag.WareHouses = _context.WareHouses.ToList();
+
+            if (!ModelState.IsValid) return View();
+
+            AppUser member = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            if (!string.IsNullOrWhiteSpace(profileVM.ConfirmNewPassword) && !string.IsNullOrWhiteSpace(profileVM.NewPassword))
+            {
+                var passwordChangeResult = await _userManager.ChangePasswordAsync(member, profileVM.CurrentPassword, profileVM.NewPassword);
+
+                if (!passwordChangeResult.Succeeded)
+                {
+                    foreach (var item in passwordChangeResult.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+
+                    return View();
+                }
+
+            }
+
+            return RedirectToAction("profile", "account");
+        }
+
     }
 }

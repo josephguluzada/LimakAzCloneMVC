@@ -34,6 +34,8 @@ namespace LimakAz.ViewModels
         [StringLength(maximumLength: 20, MinimumLength = 6, ErrorMessage = "Şifrə minimum 6 və maksimum 20 uzunluqda ola bilər")]
         [DataType(DataType.Password)]
         public string CurrentPassword { get; set; }
+        [DataType(DataType.Date)]
+
         public DateTime BirthDay { get; set; }
 
         public int WareHouseId { get; set; }
