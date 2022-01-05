@@ -17,7 +17,7 @@ namespace LimakAz.Models
         public double WaitedBonus { get; set; }
         public List<Order> Orders { get; set; }
 
-        public int WareHouseId { get; set; }
+        public int? WareHouseId { get; set; }
         public WareHouse WareHouse { get; set; }
 
     }

@@ -1,0 +1,325 @@
+﻿@model AppUser
+
+@{
+    ViewData["Title"] = "Address";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="col-sm-12 col-md-8 col-lg-9">
+    <div>
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div>
+                        <ul id="headerList" class="nav nav nav-tabs card-tabs-nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active" data-target="1">
+                                    <img src="~/assets/images/tr-circle.svg" alt=""
+                                         class="card-tabs-nav-icon">
+                                    <span class="card-tabs-nav-title">
+                                        Türkiyə
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item card-tabs">
+                                <a href="#" class="nav-link" data-target="2">
+                                    <img src="~/assets/images/usa-circle.svg" alt=""
+                                         class="card-tabs-nav-icon">
+                                    <span class="card-tabs-nav-title">Amerika</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content card-tabs-body">
+                        <div class="tab-pane active active-tab" data-id="1">
+                            <div class="card order-item order-item-address address-block">
+                                <div class="card-header">
+                                    <div class="custom-list-group">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Ad, Soyad
+                                            </h5>
+                                            <div class="order-item-copy">
+                                                <p data-id="1" id="copyText"
+                                                   class="order-item-value noselect">
+                                                    0076862 - LİMAK TAŞIMACILIK DIŞ TİCARET LİMİTED
+                                                    ŞİRKETİ
+                                                </p>
+                                                <div data-target="1" class="copy">
+                                                    <button class="btn btn-link">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Adres başlığı
+                                            </h5>
+                                            <div class="order-item-copy">
+                                                <p data-id="2" id="copyText"
+                                                   class="order-item-value noselect">
+                                                    LİMAK - 007686@(Model.Id) - @Model.FullName
+                                                </p>
+                                                <div data-target="2" class="copy">
+                                                    <button class="btn btn-link">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Adres satır 1
+                                            </h5>
+                                            <p class="order-item-label-info">
+                                                ( Müştəri kodu,ad və
+                                                soyadınızla birgə tam olaraq kopyalayın )
+                                            </p>
+                                            <div class="order-item-copy">
+                                                <p id="copyText" data-id="3"
+                                                   class="order-item-value noselect">
+                                                    007686@(Model.Id) @Model.FullName,Gürsel mah.Bahçeler cad.
+                                                    Erdoğan iş merkezi 37-39B
+                                                </p>
+                                                <div class="copy" data-target="3">
+                                                    <button class="btn btn-link">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="list-group list-group-horizontal">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                İl-Şehir
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Istanbul
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Semt
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Gürsel
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                TC kimlik
+                                            </h5>
+                                            <p class="order-item-value">
+                                                35650276048
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="list-group list-group-horizontal">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                İl-Şehir
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Istanbul
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Semt
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Gürsel
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                TC kimlik
+                                            </h5>
+                                            <p class="order-item-value">
+                                                35650276048
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="list-group list-group-horizontal">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                İl-Şehir
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Istanbul
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Semt
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Gürsel
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                TC kimlik
+                                            </h5>
+                                            <p class="order-item-value">
+                                                35650276048
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane active-tab" data-id="2">
+                            <div class="card order-item order-item-address address-block">
+                                <div class="card-header">
+                                    <div class="custom-list-group">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Name
+                                            </h5>
+                                            <div class="order-item-copy">
+                                                <p data-id="1" id="copyText"
+                                                   class="order-item-value noselect">
+                                                    007686@(Model.Id) - LİMAK TAŞIMACILIK DIŞ TİCARET LİMİTED
+                                                    ŞİRKETİ
+                                                </p>
+                                                <div data-target="1" class="copy">
+                                                    <button class="btn btn-link">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Address Line
+                                            </h5>
+                                            <div class="order-item-copy">
+                                                <p data-id="2" id="copyText"
+                                                   class="order-item-value noselect">
+                                                    LİMAK - 007686@(Model.Id) - @Model.FullName
+                                                </p>
+                                                <div data-target="2" class="copy">
+                                                    <button class="btn btn-link">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Address Line 2
+                                            </h5>
+                                            <p class="order-item-label-info">
+                                                ( Müştəri kodu,ad və
+                                                soyadınızla birgə tam olaraq kopyalayın )
+                                            </p>
+                                            <div class="order-item-copy">
+                                                <p id="copyText" data-id="3"
+                                                   class="order-item-value noselect">
+                                                    007686@(Model.Id) @Model.FullName,Gürsel mah.Bahçeler cad.
+                                                    Erdoğan iş merkezi 37-39B
+                                                </p>
+                                                <div class="copy" data-target="3">
+                                                    <button class="btn btn-link">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="list-group list-group-horizontal">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                İl-Şehir
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Istanbul
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Semt
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Gürsel
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                TC kimlik
+                                            </h5>
+                                            <p class="order-item-value">
+                                                35650276048
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="list-group list-group-horizontal">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                İl-Şehir
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Istanbul
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Semt
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Gürsel
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                TC kimlik
+                                            </h5>
+                                            <p class="order-item-value">
+                                                35650276048
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="list-group list-group-horizontal">
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                İl-Şehir
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Istanbul
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                Semt
+                                            </h5>
+                                            <p class="order-item-value">
+                                                Gürsel
+                                            </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <h5 class="order-item-label">
+                                                TC kimlik
+                                            </h5>
+                                            <p class="order-item-value">
+                                                35650276048
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -121,16 +121,30 @@ namespace LimakAz.Controllers
 
 
             ViewBag.WareHouses = _context.WareHouses.ToList();
-
-            ProfileViewModel profileVM = new ProfileViewModel
+            ProfileViewModel profileVM = new ProfileViewModel();
+           if (member.WareHouseId != null)
             {
-                FullName = member.FullName,
-                UserName = member.UserName,
-                Email = member.Email,
-                PhoneNumber = member.PhoneNumber,
-                BirthDay = member.BirthDay,
-                WareHouseId = member.WareHouseId
-            };
+                profileVM = new ProfileViewModel
+                {
+                    FullName = member.FullName,
+                    UserName = member.UserName,
+                    Email = member.Email,
+                    PhoneNumber = member.PhoneNumber,
+                    BirthDay = member.BirthDay,
+                    WareHouseId = (int)member.WareHouseId
+                };
+            }
+            else
+            {
+                profileVM = new ProfileViewModel
+                {
+                    FullName = member.FullName,
+                    UserName = member.UserName,
+                    Email = member.Email,
+                    PhoneNumber = member.PhoneNumber,
+                    BirthDay = member.BirthDay,
+                };
+            }
 
             return View(profileVM);
         }

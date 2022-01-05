@@ -38,5 +38,18 @@ namespace LimakAz.Controllers
         }
 
 
+        public IActionResult Address()
+        {
+            AppUser member = null;
+
+            if (User.Identity.IsAuthenticated)
+            {
+                member = _userManager.Users.FirstOrDefault(x => x.NormalizedUserName == User.Identity.Name.ToUpper());
+            }
+            if (member == null) return RedirectToAction("index", "error");
+
+            return View(member);
+        }
+
     }
 }
