@@ -1,7 +1,10 @@
-﻿
+﻿@model List<Order>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
+
+    int index = 0;
 }
 
 <div class="col-sm-12 col-md-8 col-lg-9">
@@ -45,16 +48,122 @@
                             </li>
                         </ul>
                     </div>
-                    <div data-id="1"
-                         class="order-list tab-content card-tabs-body active active-tab">
-                        <div>
-                            <div class="card order-item">
-                                <div class="order-item-title">
-                                    <h3>Sifariş tapılmadı</h3>
+                    @if (Model.Count > 0)
+                    {
+                        <div data-id="1" class="order-item order-item-package active active-tab">
+                            <div class="card mb20">
+                                <div class="table-responsive">
+                                    <table class="table order-table package-table">
+                                        <thead class="align-center mobile-none">
+                                            <tr>
+                                                <th scope="col">No</th>
+                                                <th scope="col">Sifariş№</th>
+                                                <th scope="col">Mağaza</th>
+                                                <th scope="col">Məbləğ</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Əməliyyat</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (Order order in Model)
+                                            {
+                                                index++;
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex v-center">
+                                                            <span>@index</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex v-center">
+                                                            <span>LMK001523@(order.Id)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="d-flex v-center">@order.ShopName</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="d-flex v-center">@order.Price ₼</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="d-flex v-center upper">@order.Status</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-end">
+                                                            <button data-target="1"
+                                                                    class="btn btn-action btn-orange btn-secondary">
+                                                                <span>Bax</span>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="package-details">
+                                                    <td colspan="6" class="padding-0">
+                                                        <div data-id="1" class="collapse">
+                                                            <table class="table order-table package-table">
+                                                                <tbody class="detail-table">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>Sifariş tarixi</strong>
+                                                                                <span>@order.CreatedAt</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>Sayı</strong>
+                                                                                <span>@order.Count</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>Qiymət TRY</strong>
+                                                                                <span>@(order.Price * 7.9) ₺</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>İzləmə № </strong>
+                                                                                <span>667341@(index)</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="flex-end">
+                                                                            <button class="btn btn-action btn-blue btn-secondary">
+                                                                                Izlə
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+
+
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                    }
+                    else
+                    {
+                        <div data-id="1"
+                             class="order-list tab-content card-tabs-body active active-tab">
+                            <div>
+                                <div class="card order-item">
+                                    <div class="order-item-title">
+                                        <h3>Sifariş tapılmadı</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
                     <div data-id="2" class="order-list tab-content card-tabs-body active-tab">
                         <div>
                             <div class="card order-item">
@@ -69,6 +178,7 @@
         </div>
     </div>
 </div>
+
 
 
 

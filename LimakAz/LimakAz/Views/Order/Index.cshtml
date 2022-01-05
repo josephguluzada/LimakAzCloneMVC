@@ -19,7 +19,7 @@
                         <form asp-action="OrderItem" asp-controller="order" method="post">
                             <div class="order-input">
                                 <div class="input-group">
-                                    <input type="text" asp-for="Url" class="form-control"
+                                    <input type="text" autocomplete="off" asp-for="Url" class="form-control"
                                            placeholder="Məhsul linkini əlavə edin" style="background-color: white; border-color: #efefef">
                                     <div class="input-group-append">
                                         <div class="input-group-text" style="border-color: #efefef">
@@ -57,8 +57,8 @@
                             <button type="submit" class="btn btn-success btn-order">Sifariş et</button>
                         </form>
 
-                        <div>
-                            <h2>Balans: @ViewBag.Balance ₼</h2>
+                        <div style=" height: 87px; display: flex; justify-content: flex-end; align-items: center; ">
+                            <h2 style=" color: #05580c; font-size: 19px; ">Balans: @ViewBag.Balance ₼</h2>
                         </div>
                     </div>
                 </div>

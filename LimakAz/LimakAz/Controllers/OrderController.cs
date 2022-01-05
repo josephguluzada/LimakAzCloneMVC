@@ -67,6 +67,8 @@ namespace LimakAz.Controllers
             }
 
             member.Balance = member.Balance - orderVM.Price;
+            member.WaitedBonus += Math.Ceiling((orderVM.Price * 20)/100);
+
 
             Order order = new Order
             {

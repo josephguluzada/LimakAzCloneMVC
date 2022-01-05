@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using LimakAz.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,29 @@ namespace LimakAz.Controllers
     [Authorize(Roles ="Member")]
     public class UserPanelController : Controller
     {
+        private readonly AppDbContext _context;
+        private readonly UserManager<AppUser> _userManager;
+
+        public UserPanelController(AppDbContext context,UserManager<AppUser> userManager)
+        {
+            _context = context;
+            _userManager = userManager;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            AppUser member = null;
+
+            if (User.Identity.IsAuthenticated)
+            {
+                member = _userManager.Users.FirstOrDefault(x => x.NormalizedUserName == User.Identity.Name.ToUpper());
+            }
+            if (member == null) return RedirectToAction("index", "error");
+
+            List<Order> orders = _context.Orders.Where(x => x.AppUserId == member.Id).ToList();
+
+
+            return View(orders);
         }
 
 
