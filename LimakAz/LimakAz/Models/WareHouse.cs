@@ -12,5 +12,6 @@ namespace LimakAz.Models
 
 
         public List<AppUser> AppUsers { get; set; }
+        public List<Courier> Couriers { get; set; }
     }
 }

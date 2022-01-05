@@ -25,6 +25,8 @@ namespace LimakAz.Models
         public OrderStatus Status { get; set; }
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
+        public int? CourierId { get; set; }
+        public Courier Courier { get; set; }
 
     }
 }
