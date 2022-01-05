@@ -1,4 +1,4 @@
-﻿
+﻿@model OrderViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -16,39 +16,46 @@
                             POÇTDAŞIMA  VƏ 
                             KURYER ŞİRKƏTİDİR
                         </h1>
-                        <form asp-action="orderItem" asp-controller="order" method="post">
+                        <form asp-action="OrderItem" asp-controller="order" method="post">
                             <div class="order-input">
                                 <div class="input-group">
-                                    <input type="text" class="form-control"
+                                    <input type="text" asp-for="Url" class="form-control"
                                            placeholder="Məhsul linkini əlavə edin" style="background-color: white; border-color: #efefef">
-                                    <div class="input-group-append" >
+                                    <div class="input-group-append">
                                         <div class="input-group-text" style="border-color: #efefef">
                                             <img src="~/assets/images/link.svg" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="order-input d-block" >
+                            <div class="order-input d-block">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input class="form-control" placeholder="Mağaza adı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
+                                            <input class="form-control" asp-for="ShopName" placeholder="Mağaza adı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input class="form-control" placeholder="Sayı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
+                                            <input class="form-control" asp-for="Count" onFocus="value=''" placeholder="Sayı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input class="form-control" placeholder="Məbləğ" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
+                                            <input class="form-control" asp-for="Price" onFocus="value=''" placeholder="Məbləğ" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div style="width:100%;margin-bottom:1rem">
+                                <span class="text-danger" style="font-size:13px" asp-validation-for="Price"></span>
+                            </div>
                             <button type="submit" class="btn btn-success btn-order">Sifariş et</button>
                         </form>
+
+                        <div>
+                            <h2>Balans: @ViewBag.Balance ₼</h2>
+                        </div>
                     </div>
                 </div>
             </div>

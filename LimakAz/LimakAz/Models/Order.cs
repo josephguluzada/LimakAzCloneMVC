@@ -17,6 +17,9 @@ namespace LimakAz.Models
         public double Price { get; set; }
         public int Count { get; set; } = 1;
         public string No { get; set; }
+        [StringLength(maximumLength: 50)]
+        public string FullName { get; set; }
+        public DateTime CreatedAt { get; set; }
         public string ShopName { get; set; }
         public OrderStatus Status { get; set; }
         public string AppUserId { get; set; }
