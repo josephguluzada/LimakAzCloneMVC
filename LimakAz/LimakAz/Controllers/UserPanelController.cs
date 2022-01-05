@@ -31,7 +31,7 @@ namespace LimakAz.Controllers
             }
             if (member == null) return RedirectToAction("index", "error");
 
-            List<Order> orders = _context.Orders.Where(x => x.AppUserId == member.Id).ToList();
+            List<Order> orders = _context.Orders.Where(x => x.AppUserId == member.Id).Where(x=>!x.InPackageStatus).ToList();
 
 
             return View(orders);

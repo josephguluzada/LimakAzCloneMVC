@@ -19,6 +19,7 @@ namespace LimakAz.Models
         public string No { get; set; }
         [StringLength(maximumLength: 50)]
         public string FullName { get; set; }
+        public bool InPackageStatus { get; set; }
         public DateTime CreatedAt { get; set; }
         public string ShopName { get; set; }
         public OrderStatus Status { get; set; }
