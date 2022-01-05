@@ -54,6 +54,12 @@ namespace LimakAz.Controllers
 
             ViewBag.Balance = member.Balance;
 
+            if(orderVM.Url == null)
+            {
+                ModelState.AddModelError("Url", "Məhsulun linkini daxil edin");
+                return View("index");
+            }
+
             if (orderVM.Price > member.Balance)
             {
                 ModelState.AddModelError("Price", "Balansı artırın");
