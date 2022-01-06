@@ -34,8 +34,8 @@
                     <td>@order.FullName</td>
                     <td>@order.ShopName</td>
                     <td>@order.Count</td>
-                    <td>@order.Price ₼</td>
-                    <td>@order.CreatedAt.AddHours(4).ToString("ddd-mm-yyyy")</td>
+                    <td>@order.Price₼</td>
+                    <td>@order.CreatedAt.AddHours(4).ToString("dd MMM yyyy")</td>
                     <td>
                         @if (order.Status == LimakAz.Models.Enums.OrderStatus.Accepted)
                         {

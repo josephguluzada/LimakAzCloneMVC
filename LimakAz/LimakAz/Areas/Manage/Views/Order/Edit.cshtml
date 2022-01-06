@@ -1,0 +1,46 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container-fluid">
+    <h1 style="text-decoration:underline;margin-top:20px">@Model.FullName's Order</h1>
+    <div class="card" style="border:none;">
+        <div class="card-body">
+            <p class="card-text">
+                Order url: <span style="font-weight:bold">@Model.Url</span>
+            </p>
+            <p class="card-text">
+                Shop Name: <span style="font-weight:bold">@Model.ShopName</span>
+            </p>
+            <p class="card-text">
+                Price: <span style="font-weight:bold">@Model.Price₼</span>
+            </p>
+            <p class="card-text">
+                Count: <span style="font-weight:bold">@Model.Count</span>
+            </p>
+            <p class="card-text">
+                Order Warehouse: <span style="font-weight:bold">@Model.AppUser.WareHouse.Name</span>
+            </p>
+            <p class="card-text">
+                Order Date: <span style="font-weight:bold">@Model.CreatedAt.AddHours(4).ToString("dd MMM yyyy HH:mm ")</span>
+            </p>
+            <p class="card-text">
+                Order Status: <span style="font-weight:bold">@Model.Status</span>
+            </p>
+            <p class="card-text">
+                <span style="text-decoration: underline;color:red">Total Price</span>: <span style="font-weight:bold;">@(Model.Count * Model.Price)₼</span>
+            </p>
+        </div>
+
+        <div class="card-body">
+            <a asp-action="accept" asp-route-id="@Model.Id" class="btn btn-success">Accept</a>
+            <a asp-action="reject" asp-route-id="@Model.Id" class="btn btn-danger">Reject</a>
+        </div>
+    </div>
+</div>
+
+
+
+

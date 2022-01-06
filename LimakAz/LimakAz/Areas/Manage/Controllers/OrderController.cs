@@ -26,5 +26,13 @@ namespace LimakAz.Areas.Manage.Controllers
 
             return View(orders);
         }
+
+        public IActionResult Edit(int id)
+        {
+            Order order = _context.Orders.Include(x => x.Courier).Include(x=>x.AppUser).ThenInclude(x=>x.WareHouse).FirstOrDefault(x=>x.Id == id);
+            if (order == null) return RedirectToAction("index", "error");
+
+            return View(order);
+        }
     }
 }
