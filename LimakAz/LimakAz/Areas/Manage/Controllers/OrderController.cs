@@ -34,5 +34,30 @@ namespace LimakAz.Areas.Manage.Controllers
 
             return View(order);
         }
+
+
+        public IActionResult Accept(int id)
+        {
+            Order order = _context.Orders.Include(x => x.Courier).Include(x => x.AppUser).ThenInclude(x => x.WareHouse).FirstOrDefault(x => x.Id == id);
+            if (order == null) return RedirectToAction("index", "error");
+
+            order.Status = Models.Enums.OrderStatus.Anbarda;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "order");
+        }
+
+        public IActionResult Reject(int id)
+        {
+            Order order = _context.Orders.Include(x => x.Courier).Include(x => x.AppUser).ThenInclude(x => x.WareHouse).FirstOrDefault(x => x.Id == id);
+            if (order == null) return RedirectToAction("index", "error");
+
+            order.Status = Models.Enums.OrderStatus.İmtina;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "order");
+        }
     }
 }

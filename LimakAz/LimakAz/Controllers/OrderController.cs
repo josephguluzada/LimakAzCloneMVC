@@ -79,7 +79,7 @@ namespace LimakAz.Controllers
                 Count = orderVM.Count,
                 Price = orderVM.Price,
                 ShopName = orderVM.ShopName,
-                Status = Models.Enums.OrderStatus.Pending,
+                Status = Models.Enums.OrderStatus.Gözləmədə,
             };
 
             await _userManager.UpdateAsync(member);
