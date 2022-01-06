@@ -80,7 +80,7 @@
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="d-flex v-center">3.00 $ | 5.10 AZN</span>
+                                                        <span class="d-flex v-center">@(order.Courier.Money) $ | @(order.Courier.Money * 1.7) AZN</span>
                                                     </td>
                                                     <td>
                                                         <span class="d-flex v-center">@order.ShopName</span>
@@ -105,6 +105,12 @@
                                                                     <tr>
                                                                         <td>
                                                                             <div class="detail-table-content">
+                                                                                <strong>İzləmə № </strong>
+                                                                                <span>667341@(index)</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
                                                                                 <strong>Bağlama linki</strong>
                                                                                 <span>@order.Url</span>
                                                                             </div>
@@ -120,17 +126,6 @@
                                                                                 <strong>Kuryer</strong>
                                                                                 <span>@order.Courier.FullName</span>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="detail-table-content">
-                                                                                <strong>İzləmə № </strong>
-                                                                                <span>667341@(index)</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td class="flex-end">
-                                                                            <button class="btn btn-action btn-blue btn-secondary">
-                                                                                Izlə
-                                                                            </button>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>

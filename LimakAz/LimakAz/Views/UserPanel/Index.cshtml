@@ -83,7 +83,7 @@
                                                         <span class="d-flex v-center">@order.ShopName</span>
                                                     </td>
                                                     <td>
-                                                        <span class="d-flex v-center">@order.Price ₼</span>
+                                                        <span class="d-flex v-center">@order.Price AZN</span>
                                                     </td>
                                                     <td>
                                                         <span class="d-flex v-center upper">@order.Status</span>
@@ -105,6 +105,18 @@
                                                                     <tr>
                                                                         <td>
                                                                             <div class="detail-table-content">
+                                                                                <strong>İzləmə № </strong>
+                                                                                <span>667341@(index)</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>Bağlama linki</strong>
+                                                                                <span>@order.Url</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
                                                                                 <strong>Sifariş tarixi</strong>
                                                                                 <span>@order.CreatedAt</span>
                                                                             </div>
@@ -120,17 +132,6 @@
                                                                                 <strong>Qiymət TRY</strong>
                                                                                 <span>@(order.Price * 7.9) ₺</span>
                                                                             </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="detail-table-content">
-                                                                                <strong>İzləmə № </strong>
-                                                                                <span>667341@(index)</span>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td class="flex-end">
-                                                                            <button class="btn btn-action btn-blue btn-secondary">
-                                                                                Izlə
-                                                                            </button>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>

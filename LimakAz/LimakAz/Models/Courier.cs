@@ -10,6 +10,7 @@ namespace LimakAz.Models
         public int Id { get; set; }
         public string FullName { get; set; }
         public int? WareHouseId { get; set; }
+        public double? Money { get; set; }
         public WareHouse WareHouse { get; set; }
 
         public List<Order> Orders { get; set; }
