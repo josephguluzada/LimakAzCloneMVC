@@ -1,4 +1,5 @@
-﻿using LimakAz.Models;
+﻿using LimakAz.Areas.Manage.ViewModels;
+using LimakAz.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +34,36 @@ namespace LimakAz.Areas.Manage.Controllers
             if (order == null) return RedirectToAction("index", "error");
 
             return View(order);
+        }
+
+        public IActionResult AddCourier(int id)
+        {
+            Order order = _context.Orders.Include(x => x.Courier).Include(x => x.AppUser).ThenInclude(x => x.WareHouse).FirstOrDefault(x => x.Id == id);
+            if (order == null) return RedirectToAction("index", "error");
+
+            CourierViewModel courierVM = new CourierViewModel();
+            courierVM.Order = order;
+            courierVM.CourierId = order.CourierId != null ? (int)order.CourierId : 0;
+
+            ViewBag.Couriers = _context.Couriers.Where(x => x.WareHouseId == order.AppUser.WareHouseId).ToList();
+
+            return View(courierVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddCourier(CourierViewModel courierVM)
+        {
+
+            Order existOrder = _context.Orders.Include(x => x.Courier).Include(x => x.AppUser).ThenInclude(x => x.WareHouse).FirstOrDefault(x => x.Id == courierVM.Order.Id);
+            if (existOrder == null) return RedirectToAction("index", "error");
+
+            existOrder.InPackageStatus = true;
+            existOrder.CourierId = courierVM.CourierId;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "Order");
         }
 
 

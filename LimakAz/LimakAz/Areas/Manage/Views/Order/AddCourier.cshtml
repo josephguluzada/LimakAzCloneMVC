@@ -1,0 +1,56 @@
+﻿@model CourierViewModel
+
+@{
+    ViewData["Title"] = "AddCourier";
+}
+
+
+<div class="container-fluid">
+    <h1 style="text-decoration:underline;margin-top:20px">@Model.Order.FullName's Order</h1>
+    <div class="card" style="border:none;">
+        <div class="card-body">
+            <p class="card-text">
+                Order url: <span style="font-weight:bold">@Model.Order.Url</span>
+            </p>
+            <p class="card-text">
+                Shop Name: <span style="font-weight:bold">@Model.Order.ShopName</span>
+            </p>
+            <p class="card-text">
+                Price: <span style="font-weight:bold">@Model.Order.Price₼</span>
+            </p>
+            <p class="card-text">
+                Count: <span style="font-weight:bold">@Model.Order.Count</span>
+            </p>
+            <p class="card-text">
+                Order Warehouse: <span style="font-weight:bold">@Model.Order.AppUser.WareHouse.Name</span>
+            </p>
+            <p class="card-text">
+                Order Date: <span style="font-weight:bold">@Model.Order.CreatedAt.AddHours(4).ToString("dd MMM yyyy HH:mm ")</span>
+            </p>
+            <p class="card-text">
+                Order Status: <span style="font-weight:bold">@Model.Order.Status</span>
+            </p>
+            <p class="card-text">
+                <span style="text-decoration: underline;color:red">Total Price</span>: <span style="font-weight:bold;">@(Model.Order.Count * Model.Order.Price)₼</span>
+            </p>
+        </div>
+
+        <form asp-action="AddCourier" asp-controller="Order" method="post">
+            <div class="row flex-column">
+                <div class="col-md-2">
+                    <select class="form-control-sm" style="outline:none;box-shadow:none;border-color:#808080;margin-bottom:30px" asp-for="CourierId" asp-items="@(new SelectList((List<Courier>)ViewBag.Couriers,"Id","FullName"))"></select>
+                </div>
+                <input type="hidden"  asp-for="@Model.Order.Id"/>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-info">Confirm Courier</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+

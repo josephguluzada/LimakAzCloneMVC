@@ -21,7 +21,7 @@
                     <th scope="col">Price</th>
                     <th scope="col">Order Time</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,6 +54,7 @@
 
                     <td>
                         <a asp-action="edit" asp-route-id="@order.Id" class="btn btn-success">Edit</a>
+                        <a asp-action="addcourier" asp-route-id="@order.Id" class="btn btn-info">Add Courier</a>
                     </td>
                 </tr>
                 }
