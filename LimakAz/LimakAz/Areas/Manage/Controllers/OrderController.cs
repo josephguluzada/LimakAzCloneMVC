@@ -2,6 +2,7 @@
 using LimakAz.Models;
 using LimakAz.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,11 +19,13 @@ namespace LimakAz.Areas.Manage.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IEmailService _emailService;
+        private readonly UserManager<AppUser> _userManager;
 
-        public OrderController(AppDbContext context,IEmailService emailService)
+        public OrderController(AppDbContext context,IEmailService emailService,UserManager<AppUser> userManager)
         {
             _context = context;
             _emailService = emailService;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -80,6 +83,14 @@ namespace LimakAz.Areas.Manage.Controllers
             if (order == null) return RedirectToAction("index", "error");
 
             order.Status = Models.Enums.OrderStatus.Anbarda;
+
+            AppUser member = _userManager.Users.FirstOrDefault(x => x.NormalizedUserName == order.AppUser.NormalizedUserName && !x.IsAdmin);
+            if (member == null) return RedirectToAction("index", "error");
+
+            member.Bonus = member.Bonus + member.WaitedBonus;
+            member.WaitedBonus = 0;
+
+            _userManager.UpdateAsync(member);
 
             _context.SaveChanges();
 
