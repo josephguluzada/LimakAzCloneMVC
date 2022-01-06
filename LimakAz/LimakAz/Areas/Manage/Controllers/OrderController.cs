@@ -23,7 +23,7 @@ namespace LimakAz.Areas.Manage.Controllers
 
         public IActionResult Index()
         {
-            List<Order> orders = _context.Orders.Include(x=>x.AppUser).ToList();
+            List<Order> orders = _context.Orders.OrderByDescending(x=>x.CreatedAt).Include(x=>x.AppUser).ToList();
 
             return View(orders);
         }
@@ -86,6 +86,18 @@ namespace LimakAz.Areas.Manage.Controllers
             if (order == null) return RedirectToAction("index", "error");
 
             order.Status = Models.Enums.OrderStatus.İmtina;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index", "order");
+        }
+
+        public IActionResult Done(int id)
+        {
+            Order order = _context.Orders.Include(x => x.Courier).Include(x => x.AppUser).ThenInclude(x => x.WareHouse).FirstOrDefault(x => x.Id == id);
+            if (order == null) return RedirectToAction("index", "error");
+
+            order.Status = Models.Enums.OrderStatus.Tamamlanmış;
 
             _context.SaveChanges();
 

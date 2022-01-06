@@ -39,11 +39,19 @@
                     <td>
                         @if (order.Status == LimakAz.Models.Enums.OrderStatus.Anbarda)
                         {
-                            <h5><span style="padding: 5px; background-color: green; border-radius: 3px; display: inline-block; margin-top: 2px; color: white; font-weight: 600; font-size: 1rem; min-width: 90px; text-align: center">Accepted</span></h5>
+                            <h5><span style="padding: 5px; background-color: darkslateblue; border-radius: 3px; display: inline-block; margin-top: 2px; color: white; font-weight: 600; font-size: 1rem; min-width: 90px; text-align: center">Accepted</span></h5>
                         }
                         else if (order.Status == LimakAz.Models.Enums.OrderStatus.İmtina)
                         {
                             <h5><span style="padding: 5px; background-color: red; border-radius: 3px; display: inline-block; margin-top: 2px; color: white; font-weight: 600; font-size: 1rem; min-width: 90px;text-align:center">Rejected</span></h5>
+                        }
+                        else if (order.Status == LimakAz.Models.Enums.OrderStatus.Kuryerdə)
+                        {
+                            <h5><span style="padding: 5px; background-color: deepskyblue; border-radius: 3px; display: inline-block; margin-top: 2px; color: white; font-weight: 600; font-size: 1rem; min-width: 90px;text-align:center">On Courier</span></h5>
+                        }
+                        else if (order.Status == LimakAz.Models.Enums.OrderStatus.Tamamlanmış)
+                        {
+                            <h5><span style="padding: 5px; background-color: green; border-radius: 3px; display: inline-block; margin-top: 2px; color: white; font-weight: 600; font-size: 1rem; min-width: 90px;text-align:center">Done</span></h5>
                         }
                         else
                         {

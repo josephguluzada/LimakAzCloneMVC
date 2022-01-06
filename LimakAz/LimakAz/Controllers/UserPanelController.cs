@@ -32,7 +32,7 @@ namespace LimakAz.Controllers
             }
             if (member == null) return RedirectToAction("index", "error");
 
-            List<Order> orders = _context.Orders.Where(x => x.AppUserId == member.Id).Where(x=>!x.InPackageStatus).ToList();
+            List<Order> orders = _context.Orders.OrderByDescending(x => x.CreatedAt).Where(x => x.AppUserId == member.Id).Where(x=>!x.InPackageStatus).ToList();
 
 
             return View(orders);
@@ -63,7 +63,7 @@ namespace LimakAz.Controllers
             }
             if (member == null) return RedirectToAction("index", "error");
 
-            List<Order> orders = _context.Orders.Where(x => x.AppUserId == member.Id).Where(x => x.InPackageStatus).Include(x=>x.Courier).Include(x=>x.AppUser).ThenInclude(x=>x.WareHouse).ToList();
+            List<Order> orders = _context.Orders.OrderByDescending(x=>x.CreatedAt).Where(x => x.AppUserId == member.Id).Where(x => x.InPackageStatus).Include(x=>x.Courier).Include(x=>x.AppUser).ThenInclude(x=>x.WareHouse).ToList();
 
 
             return View(orders);

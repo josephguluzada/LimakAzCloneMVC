@@ -21,7 +21,7 @@ namespace LimakAz.Controllers
             _userManager = userManager;
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult OrderItem()
         {
             AppUser member = null;
 
@@ -42,15 +42,13 @@ namespace LimakAz.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OrderItem(OrderViewModel orderVM)
         {
-
-            if (!ModelState.IsValid) return View();
-
             AppUser member = null;
-
             if (User.Identity.IsAuthenticated)
             {
                 member = _userManager.Users.FirstOrDefault(x => x.NormalizedUserName == User.Identity.Name.ToUpper() && !x.IsAdmin);
             }
+            ViewBag.Balance = member.Balance;
+            if (!ModelState.IsValid) return View();
 
             ViewBag.Balance = member.Balance;
 

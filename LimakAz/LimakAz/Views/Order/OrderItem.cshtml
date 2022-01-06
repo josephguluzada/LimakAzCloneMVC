@@ -13,7 +13,7 @@
                         <h1 class="title order-card-title">
                             "LİMAK"
                             <span class="badge badge-secondary">SÜRƏTLİ</span>
-                            POÇTDAŞIMA  VƏ 
+                            POÇTDAŞIMA  VƏ
                             KURYER ŞİRKƏTİDİR
                         </h1>
                         <form asp-action="OrderItem" asp-controller="order" method="post">
@@ -38,16 +38,19 @@
                                         <div class="input-group">
                                             <input class="form-control" asp-for="ShopName" placeholder="Mağaza adı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
                                         </div>
+                                        <span class="text-danger" style="font-size:13px" asp-validation-for="ShopName"></span>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="input-group">
                                             <input class="form-control" asp-for="Count" onFocus="value=''" placeholder="Sayı" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
                                         </div>
+                                        <span class="text-danger" style="font-size:13px" asp-validation-for="Count"></span>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="input-group">
                                             <input class="form-control" asp-for="Price" type="number" onFocus="value=''" placeholder="Məbləğ" style="border: 0.1rem solid #efefef; border-radius: 0.5rem; background-color: white" />
                                         </div>
+                                        <span class="text-danger" style="font-size:13px" asp-validation-for="Price"></span>
                                     </div>
                                 </div>
                             </div>
@@ -66,4 +69,5 @@
         </div>
     </div>
 </section>
+
 
