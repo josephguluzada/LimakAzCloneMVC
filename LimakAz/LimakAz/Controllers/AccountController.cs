@@ -102,7 +102,18 @@ namespace LimakAz.Controllers
                 return View();
             }
 
-            return RedirectToAction("index", "userpanel");
+            AppUser admin = null;
+
+            admin = _userManager.Users.FirstOrDefault(x => x.NormalizedEmail == memberLoginVM.Email.ToUpper() && x.IsAdmin);
+
+            if(admin != null)
+            {
+                return RedirectToAction("index", "dashboard",new { area = "manage"});
+            }
+            else
+            {
+                return RedirectToAction("index", "userpanel");
+            }
         }
 
 
