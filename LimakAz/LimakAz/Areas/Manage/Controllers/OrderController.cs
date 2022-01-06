@@ -1,10 +1,12 @@
 ﻿using LimakAz.Areas.Manage.ViewModels;
 using LimakAz.Models;
+using LimakAz.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,10 +17,12 @@ namespace LimakAz.Areas.Manage.Controllers
     public class OrderController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IEmailService _emailService;
 
-        public OrderController(AppDbContext context)
+        public OrderController(AppDbContext context,IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         public IActionResult Index()
@@ -64,6 +68,8 @@ namespace LimakAz.Areas.Manage.Controllers
 
             _context.SaveChanges();
 
+
+
             return RedirectToAction("index", "Order");
         }
 
@@ -76,6 +82,26 @@ namespace LimakAz.Areas.Manage.Controllers
             order.Status = Models.Enums.OrderStatus.Anbarda;
 
             _context.SaveChanges();
+
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader("wwwroot/templates/order.html"))
+            {
+                body = reader.ReadToEnd();
+            }
+
+            string str = @$"<td align=""center"" bgcolor=""#F36928"" style=""background-color:#f36928;color:#ffffff;text-align:center;vertical-align:middle;font-family:Arial,sans-serif,helvetica;font-size:17px;line-height:24px"">
+                                                Salam <strong>{order.FullName}, {order.ShopName}dan sifariş etdiyiniz</ strong >,<br>
+  
+                                                  <span style =""color:#000000 !important""> LMK001523{order.Id} </span> nömrəli <br>
+                                                   bağlamanız artıq anbardadır
+                                               </td> ";
+            string orderHtml = string.Empty;
+            orderHtml += str;
+
+            body = body.Replace("{{id}}",str);
+
+
+            _emailService.Send(order.AppUser.Email, "Sifarişiniz təstiq olundu.",body);
 
             return RedirectToAction("index", "order");
         }

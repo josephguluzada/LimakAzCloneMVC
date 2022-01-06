@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<script src="~/manage/charts/highcharts.js"></script>
+<script src="~/manage/charts/exporting.js"></script>
+
+<figure class="highcharts-figure" style="width:40vw">
+    <div id="container"></div>
+</figure>
+
+
+<script>
+
+    $(document).ready(function () {
+        $.getJSON("/manage/Dashboard/GetData", function (data) {
+
+            console.log(data)
+
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Order Statuses'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Anbarda',
+                        y: data.inWareHouse
+                    }, {
+                        name: 'Tamamlanmış',
+                        y: data.done
+                    }, {
+                        name: 'Kuryerdə',
+                        y: data.onCourier
+                    }, {
+                        name: 'Gözləmədə',
+                        y: data.pending
+                    }, {
+                        name: 'İmtina edilmiş',
+                        y: data.rejected
+                    }]
+                }]
+            });
+
+        });
+    });
+
+
+
+</script>

@@ -1,4 +1,5 @@
 using LimakAz.Models;
+using LimakAz.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,12 +34,14 @@ namespace LimakAz
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("default"));
             });
+            services.AddScoped<IEmailService, EmailService>();
 
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequireNonAlphanumeric = false;
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -74,7 +74,7 @@ namespace LimakAz.Areas.Manage.Controllers
                 return View();
             }
 
-            return RedirectToAction("index","shop");
+            return RedirectToAction("index","dashboard");
         }
 
         public async Task<IActionResult> Logout()
