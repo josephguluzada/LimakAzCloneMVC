@@ -76,16 +76,17 @@ for (let i = 0; i < flagBtn.length; i++) {
 const showBtn = Array.from(document.querySelectorAll(".package-table button"));
 const collapseDiv = Array.from(document.querySelectorAll(".collapse"));
 
-for (let i = 0; i < showBtn.length; i++) {
-    showBtn[i].addEventListener("click", function () {
+showBtn.forEach(el => {
+    el.addEventListener("click", function () {
         let target = this.getAttribute("data-target")
         collapseDiv.forEach(el => {
             if (target == el.getAttribute("data-id")) {
                 el.classList.toggle("show")
+                console.log("Salam")
             }
         })
     })
-}
+})
 
 
 // Copy to Clipboard
