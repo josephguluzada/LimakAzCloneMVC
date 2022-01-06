@@ -59,6 +59,7 @@ namespace LimakAz.Areas.Manage.Controllers
             if (existOrder == null) return RedirectToAction("index", "error");
 
             existOrder.InPackageStatus = true;
+            existOrder.Status = Models.Enums.OrderStatus.Kuryerdə;
             existOrder.CourierId = courierVM.CourierId;
 
             _context.SaveChanges();

@@ -1,0 +1,186 @@
+﻿@model List<Order>
+
+@{
+    ViewData["Title"] = "Package";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+
+    int index = 0;
+}
+
+<div class="col-sm-12 col-md-8 col-lg-9">
+    <div>
+        <div class="content">
+            <div class="content-header" style="margin-bottom: 2rem;">
+                <a asp-action="index" asp-controller="userpanel" class="btn btn-submit btn-primary btn-sm">
+                    <span>
+                        Yenilə
+                        <i class="fas fa-sync"></i>
+                    </span>
+                </a>
+                <form action="" class="form-package">
+                    <select name="" id="" class="custom-select">
+                        <option value="-1">Hamısı</option>
+                        <option value="1">Gözləmədə</option>
+                        <option value="2">Icrada</option>
+                        <option value="3">Problemli</option>
+                    </select>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div>
+                        <ul id="headerList" class="nav nav nav-tabs card-tabs-nav">
+                            <li class="nav-item">
+                                <a data-target="1" href="#" class="nav-link active">
+                                    <img src="~/assets/images/tr-circle.svg" alt=""
+                                         class="card-tabs-nav-icon">
+                                    <span class="card-tabs-nav-title">
+                                        Türkiyə
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item card-tabs">
+                                <a data-target="2" href="#" class="nav-link">
+                                    <img src="~/assets/images/usa-circle.svg" alt=""
+                                         class="card-tabs-nav-icon">
+                                    <span class="card-tabs-nav-title">Amerika</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    @if (Model.Count > 0)
+                    {
+                        <div data-id="1" class="order-item order-item-package active active-tab">
+                            <div class="card mb20">
+                                <div class="table-responsive">
+                                    <table class="table order-table package-table">
+                                        <thead class="align-center mobile-none">
+                                            <tr>
+                                                <th scope="col">No</th>
+                                                <th scope="col">Sifariş№</th>
+                                                <th scope="col">Çatdırılma</th>
+                                                <th scope="col">Mağaza</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Əməliyyat</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (Order order in Model)
+                                            {
+                                                index++;
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex v-center">
+                                                            <span>@index</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex v-center">
+                                                            <span>LMK001523@(order.Id)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="d-flex v-center">3.00 $ | 5.10 AZN</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="d-flex v-center">@order.ShopName</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="d-flex v-center upper">@order.Status</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-end">
+                                                            <button data-target="@order.Id"
+                                                                    class="btn btn-action btn-orange btn-secondary">
+                                                                <span>Bax</span>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="package-details">
+                                                    <td colspan="6" class="padding-0">
+                                                        <div data-id="@order.Id" class="collapse">
+                                                            <table class="table order-table package-table">
+                                                                <tbody class="detail-table">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>Bağlama linki</strong>
+                                                                                <span>@order.Url</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>Anbar</strong>
+                                                                                <span>@order.AppUser.WareHouse.Name</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>Kuryer</strong>
+                                                                                <span>@order.Courier.FullName</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="detail-table-content">
+                                                                                <strong>İzləmə № </strong>
+                                                                                <span>667341@(index)</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="flex-end">
+                                                                            <button class="btn btn-action btn-blue btn-secondary">
+                                                                                Izlə
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div data-id="1"
+                             class="order-list tab-content card-tabs-body active active-tab">
+                            <div>
+                                <div class="card order-item">
+                                    <div class="order-item-title">
+                                        <h3>Sifariş tapılmadı</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                    <div data-id="2" class="order-list tab-content card-tabs-body active-tab">
+                        <div>
+                            <div class="card order-item">
+                                <div class="order-item-title">
+                                    <h3>Sifariş tapılmadı</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
