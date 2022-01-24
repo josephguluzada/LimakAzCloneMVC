@@ -1,4 +1,4 @@
-﻿
+﻿@model DashboardViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -6,72 +6,238 @@
 
 <script src="~/manage/charts/highcharts.js"></script>
 <script src="~/manage/charts/exporting.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
-<figure class="highcharts-figure" style="width:40vw">
-    <div id="container"></div>
-</figure>
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Earnings
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Orders.Where(x => x.Status == LimakAz.Models.Enums.OrderStatus.Anbarda).Sum(x => x.Price) ₼</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300" style="color: #0033C8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Self Earning
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@((Model.Orders.Where(x => x.Status == LimakAz.Models.Enums.OrderStatus.Anbarda).Sum(x => x.Price) * 20)/100) ₼</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300" style="color: #00D284"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            <a asp-action="index" asp-controller="comment" style="color: #36b9cc !important;">All Couriers</a>
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@Model.Couriers.Count()</div>
+                            </div>
+                            <div class="col">
+                                <div class="progress progress-sm mr-2">
+                                    <div class="progress-bar bg-info" role="progressbar"
+                                         style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-motorcycle fa-2x text-gray-300" style="color: #00CFF4 "></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            <a asp-action="index" asp-controller="order" style="color: #f6c23e !important;">Pending Requests</a>
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.Orders.Where(x => x.Status == LimakAz.Models.Enums.OrderStatus.Gözləmədə).Count()</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300" style="color: #F6C476"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-<script>
+<div class="row">
+    <div class="col-md-6">
+        <figure class="highcharts-figure" style="width:40vw">
+            <div id="container"></div>
+        </figure>
+    </div>
 
-    $(document).ready(function () {
-        $.getJSON("/manage/Dashboard/GetData", function (data) {
+    <div class="col-md-6">
+        <figure class="highcharts-figure" style="width:40vw">
+            <div id="container2"></div>
+        </figure>
+    </div>
+    </div>
 
-            console.log(data)
 
-            Highcharts.chart('container', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Order Statuses'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                },
-                accessibility: {
-                    point: {
-                        valueSuffix: '%'
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $.getJSON("/manage/Dashboard/GetData", function (data) {
+
+                console.log(data)
+
+                Highcharts.chart('container', {
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: 'Order Statuses'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    accessibility: {
+                        point: {
+                            valueSuffix: '%'
                         }
-                    }
-                },
-                series: [{
-                    name: 'Brands',
-                    colorByPoint: true,
-                    data: [{
-                        name: 'Anbarda',
-                        y: data.inWareHouse
-                    }, {
-                        name: 'Tamamlanmış',
-                        y: data.done
-                    }, {
-                        name: 'Kuryerdə',
-                        y: data.onCourier
-                    }, {
-                        name: 'Gözləmədə',
-                        y: data.pending
-                    }, {
-                        name: 'İmtina edilmiş',
-                        y: data.rejected
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            }
+                        }
+                    },
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [{
+                            name: 'Anbarda',
+                            y: data.inWareHouse
+                        }, {
+                            name: 'Tamamlanmış',
+                            y: data.done
+                        }, {
+                            name: 'Kuryerdə',
+                            y: data.onCourier
+                        }, {
+                            name: 'Gözləmədə',
+                            y: data.pending
+                        }, {
+                            name: 'İmtina edilmiş',
+                            y: data.rejected
+                        }]
                     }]
-                }]
+                });
+
             });
-
         });
-    });
+
+        $(document).ready(function () {
+            $.getJSON("/manage/Dashboard/GetData", function (data) {
+
+                console.log(data)
+
+                Highcharts.chart('container2', {
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: 'Couriers'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    accessibility: {
+                        point: {
+                            valueSuffix: '%'
+                        }
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            }
+                        }
+                    },
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [{
+                            name: 'Sumqayıt',
+                            y: data.sumgayit
+                        }, {
+                            name: 'Gəncə',
+                            y: data.ganja
+                        }, {
+                            name: 'Xalqlar Dostluğu',
+                            y: data.khalglar
+                        }, {
+                            name: 'Bakı-İçərişəhər',
+                            y: data.iceriseher
+                        }, {
+                            name: 'Xırdalan',
+                            y: data.xirdalan
+                            }, {
+                            name: 'Zaqatala',
+                                y: data.zaqatala
+                            }]
+                    }]
+                });
+
+            });
+        });
 
 
-
-</script>
+    </script>

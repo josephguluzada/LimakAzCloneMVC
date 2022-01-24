@@ -17,14 +17,6 @@
                         <i class="fas fa-sync"></i>
                     </span>
                 </a>
-                <form action="" class="form-package">
-                    <select name="" id="" class="custom-select">
-                        <option value="-1">Hamısı</option>
-                        <option value="1">Gözləmədə</option>
-                        <option value="2">Icrada</option>
-                        <option value="3">Problemli</option>
-                    </select>
-                </form>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-12">
@@ -91,7 +83,7 @@
                                                     <td>
                                                         <div class="d-flex flex-end">
                                                             <button data-target="@order.Id"
-                                                                    class="btn btn-action btn-orange btn-secondary">
+                                                                    class="btn btn-action currency-btn btn-orange btn-secondary">
                                                                 <span>Bax</span>
                                                             </button>
                                                         </div>
@@ -130,7 +122,7 @@
                                                                         <td>
                                                                             <div class="detail-table-content">
                                                                                 <strong>Qiymət TRY</strong>
-                                                                                <span>@(order.Price * 7.9) ₺</span>
+                                                                                <span class="currency-change">@(order.Price * 7.9) ₺</span>
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -182,4 +174,21 @@
 
 
 
+
+@*<script>
+
+    let currency = document.querySelector(".currency-change");
+    let currencyBtn = document.querySelector(".currency-btn");
+
+    currencyBtn.addEventListener("click",getCat())
+
+    function getCat() {
+        fetch("https://www.cbar.az/currencies/24.01.2022.xml")
+            .then(res => res.text())
+            .then(data => {
+                currency.innerHTML = `<span>${data.rates}</span>`
+                console.log(data)
+            })
+    }
+</script>*@
 

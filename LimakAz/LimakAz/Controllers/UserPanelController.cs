@@ -1,5 +1,6 @@
 ﻿using LimakAz.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,6 @@ namespace LimakAz.Controllers
             _context = context;
             _userManager = userManager;
         }
-
         public IActionResult Index()
         {
             AppUser member = null;

@@ -16,6 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="shortcut icon" type="image/x-icon" href="https://limak.az/favicon.ico">
     <link rel="stylesheet" href="~/assets/css/style.css">
     <title>Limak.az</title>
@@ -55,9 +56,6 @@
                             </a>
                         </li>
                         <li class="lang-dropdown">
-                            <a href="courier.html" class="dropdown-item"><span>Kuryer</span></a>
-                        </li>
-                        <li class="lang-dropdown">
                             <a asp-action="profile" asp-controller="account"
                                class="dropdown-item"><span>Tənzimləmələr</span></a>
                         </li>
@@ -78,9 +76,9 @@
                     </div>
                     <ul class="nav-list col-md-5" style="justify-content: flex-start;">
                         <li class="nav-list-item"><a asp-action="index" asp-controller="tariff">Tariflər</a></li>
-                        <li class="nav-list-item"><a href="calculator.html">Kalkulyator</a></li>
                         <li class="nav-list-item"><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
                         <li class="nav-list-item"><a asp-action="index" asp-controller="contact">Əlaqə</a></li>
+                        <li class="nav-list-item"><a asp-action="index" asp-controller="about">Haqqımızda</a></li>
                         <li class="nav-list-item"><a asp-action="index" asp-controller="faq">FAQ</a></li>
                     </ul>
                     <div class="navbar-right-col col-md-5" style="padding-left: 0;">
@@ -136,14 +134,6 @@
                                                 <strong>@member.UserName</strong>
                                             </h3>
                                         </div>
-                                        <div class="list-group-item user-nav-notf">
-                                            <a href="notification.html">
-                                                <i class="fas fa-bell"></i>
-                                                <h3 class="user-nav-title">
-                                                    Bildirişlər
-                                                </h3>
-                                            </a>
-                                        </div>
                                         <div class="list-group-item">
                                             <i class="fas fa-info-circle"></i>
                                             <div class="user-nav-group">
@@ -184,12 +174,7 @@
                                                 <h3 class="aside-nav-title">Xaricdəki ünvanlar</h3>
                                             </a>
                                         </div>
-                                        <div class="list-group-item aside-nav">
-                                            <a href="courier.html">
-                                                <i class="fas fa-user-tag"></i>
-                                                <h3 class="aside-nav-title">Kuryer</h3>
-                                            </a>
-                                        </div>
+
                                     </div>
                                     <div class="list-group aside-account">
                                         <div class="list-group-item mt-0 aside-nav">
@@ -248,7 +233,6 @@
                 <div class="footer-navigation-menu col-md-4">
                     <ul class="footer-nav-list">
                         <li><a asp-action="index" asp-controller="tariff">Tariflər</a></li>
-                        <li><a href="calculator.html">Kalkulyator</a></li>
                         <li><a asp-action="index" asp-controller="shop">Mağazalar</a></li>
                     </ul>
                     <ul class="footer-nav-list">

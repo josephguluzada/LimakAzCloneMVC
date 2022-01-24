@@ -77,7 +77,7 @@ namespace LimakAz.Areas.Manage.Controllers
         }
 
 
-        public IActionResult Accept(int id)
+        public async Task<IActionResult> Accept(int id)
         {
             Order order = _context.Orders.Include(x => x.Courier).Include(x => x.AppUser).ThenInclude(x => x.WareHouse).FirstOrDefault(x => x.Id == id);
             if (order == null) return RedirectToAction("index", "error");
@@ -90,7 +90,7 @@ namespace LimakAz.Areas.Manage.Controllers
             member.Bonus = member.Bonus + member.WaitedBonus;
             member.WaitedBonus = 0;
 
-            _userManager.UpdateAsync(member);
+            await _userManager.UpdateAsync(member);
 
             _context.SaveChanges();
 

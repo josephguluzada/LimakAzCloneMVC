@@ -11,7 +11,7 @@ namespace LimakAz.Models
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(maximumLength:120)]
+        [StringLength(maximumLength:300)]
         public string Url { get; set; }
         [Required]
         public double Price { get; set; }

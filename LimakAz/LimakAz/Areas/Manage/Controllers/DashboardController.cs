@@ -1,4 +1,5 @@
-﻿using LimakAz.Models;
+﻿using LimakAz.Areas.Manage.ViewModels;
+using LimakAz.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -21,7 +22,14 @@ namespace LimakAz.Areas.Manage.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            DashboardViewModel dashboardVM = new DashboardViewModel
+            {
+                Orders = _context.Orders.ToList(),
+                Couriers = _context.Couriers.ToList()
+            };
+
+
+            return View(dashboardVM);
         }
 
 
@@ -33,6 +41,13 @@ namespace LimakAz.Areas.Manage.Controllers
             int pending = _context.Orders.Where(x => x.Status == Models.Enums.OrderStatus.Gözləmədə).Count();
             int rejected = _context.Orders.Where(x => x.Status == Models.Enums.OrderStatus.İmtina).Count();
 
+            int sumgayit = _context.Couriers.Where(x => x.WareHouseId == 3).Count();
+            int zaqatala = _context.Couriers.Where(x => x.WareHouseId == 4).Count();
+            int xirdalan = _context.Couriers.Where(x => x.WareHouseId == 6).Count();
+            int ganja = _context.Couriers.Where(x => x.WareHouseId == 2).Count();
+            int iceriseher = _context.Couriers.Where(x => x.WareHouseId == 1).Count();
+            int xalqlar = _context.Couriers.Where(x => x.WareHouseId == 5).Count();
+
 
             Ratio ratio = new Ratio();
             ratio.InWareHouse = inWarehouse;
@@ -40,6 +55,13 @@ namespace LimakAz.Areas.Manage.Controllers
             ratio.OnCourier = onCourier;
             ratio.Pending = pending;
             ratio.Rejected = rejected;
+
+            ratio.Khalglar = xalqlar;
+            ratio.Sumgayit = sumgayit;
+            ratio.Zaqatala = zaqatala;
+            ratio.Xirdalan = xirdalan;
+            ratio.Iceriseher = iceriseher;
+            ratio.Ganja = ganja;
 
             return Json(ratio);
         }
@@ -52,6 +74,13 @@ namespace LimakAz.Areas.Manage.Controllers
             public int OnCourier { get; set; }
             public int Pending { get; set; }
             public int Rejected { get; set; }
+
+            public int Sumgayit { get; set; }
+            public int Khalglar { get; set; }
+            public int Iceriseher { get; set; }
+            public int Ganja { get; set; }
+            public int Xirdalan { get; set; }
+            public int Zaqatala { get; set; }
         }
     }
 }
